@@ -16,3 +16,4 @@ brtnd is an application that connects bartenders to eventgoers. Think of Uber, b
 4. Host & Bartender Reviews
 ### Bonus Features
 5. Google Maps API to display pins for bartender location (origin), host location(destination), and estimated time of arrival.
+6. Host can tip a bartender
