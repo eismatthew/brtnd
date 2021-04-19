@@ -20,6 +20,13 @@ const BartenderSchema = new Schema({
     type: String,
     required: true,
   },
+  balance: {
+    type: Number,
+    default: 0,
+  },
+  order:{
+    []
+  },
   date: {
     type: Date,
     default: Date.now,

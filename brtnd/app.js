@@ -2,11 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const bartenders = require("./routes/api/bartenders");
-const passport = require('passport');
+const orders = require("./routes/api/orders");
+const passport = require("passport");
 
 const app = express();
 const db = require("./config/keys").mondoURI;
-
 
 //BODY PARSER IS DEPRECATED
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(passport.initialize());
 
-
 app.use("/api/users", users);
 app.use("/api/bartenders", bartenders);
+app.use("/api/orders", orders);
 
 const port = process.env.PORT || 5000;
 
