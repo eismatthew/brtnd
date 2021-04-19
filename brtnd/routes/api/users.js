@@ -9,6 +9,7 @@ const validateSignupInput = require("../../validation/signup");
 const validateLoginInput = require("../../validation/login");
 
 router.post("/signup", (req, res) => {
+  // console.log(req.body)
   const { errors, isValid } = validateSignupInput(req.body);
 
   if (!isValid) {
