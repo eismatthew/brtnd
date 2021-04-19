@@ -24,9 +24,6 @@ const BartenderSchema = new Schema({
     type: Number,
     default: 0,
   },
-  order:{
-    []
-  },
   date: {
     type: Date,
     default: Date.now,

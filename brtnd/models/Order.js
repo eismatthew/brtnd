@@ -22,4 +22,16 @@ const OrderSchema = new Schema({
     type: Number,
     default: 0,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  orderedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  takenBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Bartenders'
+  }
 });
