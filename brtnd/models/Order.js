@@ -28,10 +28,13 @@ const OrderSchema = new Schema({
   },
   orderedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users'
+    ref: "users",
+    required: true,
   },
   takenBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Bartenders'
-  }
+    ref: "Bartenders",
+  },
 });
+
+module.exports = Order = mongoose.model("orders", OrderSchema);

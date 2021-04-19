@@ -4,6 +4,7 @@ const users = require("./routes/api/users");
 const bartenders = require("./routes/api/bartenders");
 const orders = require("./routes/api/orders");
 const passport = require("passport");
+require('./config/passport')(passport);
 
 const app = express();
 const db = require("./config/keys").mondoURI;
