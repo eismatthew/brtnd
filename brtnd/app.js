@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const bartenders = require("./routes/api/bartenders");
 const orders = require("./routes/api/orders");
+const userReviews = require("./routes/api/userReviews");
+const bartenderReviews = require("./routes/api/bartenderReviews");
 const passport = require("passport");
 
 const app = express();
@@ -23,6 +25,8 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/bartenders", bartenders);
 app.use("/api/orders", orders);
+app.use("/api/user-reviews", userReviews);
+app.use("/api/bartender-reviews", bartenderReviews);
 
 const port = process.env.PORT || 5000;
 

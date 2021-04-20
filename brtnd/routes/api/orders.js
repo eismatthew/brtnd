@@ -4,24 +4,38 @@ const passport = require("passport");
 
 const Order = require("../../models/Order");
 
-router.get("/", (req, res) => {
-  Order.find({})
-    .sort({ date: -1 })
-    .then((orders) => res.json(orders))
-    .catch((err) => res.status(404).json({ noOrdersFound: "No orders found" }));
-});
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Order.find({})
+      .sort({ date: -1 })
+      .then((orders) => res.json(orders))
+      .catch((err) =>
+        res.status(404).json({ noOrdersFound: "No orders found" })
+      );
+  }
+);
 
-router.get("/user/:user_id", (req, res) => {
-  Order.find({ orderedBy: req.params.user_id })
-    .then((orders) => res.json(orders))
-    .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
-});
+router.get(
+  "/user/:user_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Order.find({ orderedBy: req.params.user_id })
+      .then((orders) => res.json(orders))
+      .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
+  }
+);
 
-router.get("/bartender/:user_id", (req, res) => {
-  Order.find({ takenBy: req.params.user_id })
-    .then((orders) => res.json(orders))
-    .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
-});
+router.get(
+  "/bartender/:user_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Order.find({ takenBy: req.params.user_id })
+      .then((orders) => res.json(orders))
+      .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
+  }
+);
 
 router.get("/:id", (req, res) => {
   Order.findById(req.params.id)
@@ -31,28 +45,36 @@ router.get("/:id", (req, res) => {
     );
 });
 
-router.delete("/:id", (req, res) => {
-  Order.findByIdAndDelete(req.params.id)
-    .then((order) => res.json(order))
-    .catch((err) =>
-      res.status(404).json({ noOrdersFound: "No order found with that ID" })
-    );
-});
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Order.findByIdAndDelete(req.params.id)
+      .then((order) => res.json(order))
+      .catch((err) =>
+        res.status(404).json({ noOrdersFound: "No order found with that ID" })
+      );
+  }
+);
 
-router.patch("/:id", (req, res) => {
-  Order.findByIdAndUpdate(
-    req.params.id,
-    { $set: req.body },
-    { new: true },
-    function (err, result) {
-      if (err) {
-        console.log(err);
+router.patch(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Order.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true },
+      function (err, result) {
+        if (err) {
+          console.log(err);
+        }
+        console.log("Result: " + result);
+        res.send(result);
       }
-      console.log("Result: " + result);
-      res.send(result);
-    }
-  );
-});
+    );
+  }
+);
 
 router.post(
   "/",
