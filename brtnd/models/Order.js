@@ -27,13 +27,13 @@ const OrderSchema = new Schema({
     default: Date.now,
   },
   orderedBy: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "users",
     required: true,
   },
   takenBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Bartenders",
+    type: Schema.Types.ObjectId,
+    ref: "bartenders",
   },
 });
 
