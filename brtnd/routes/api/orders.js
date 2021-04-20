@@ -28,10 +28,10 @@ router.get(
 );
 
 router.get(
-  "/bartender/:user_id",
+  "/bartender/:bartender_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Order.find({ takenBy: req.params.user_id })
+    Order.find({ takenBy: req.params.bartender_id })
       .then((orders) => res.json(orders))
       .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
   }
