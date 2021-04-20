@@ -17,6 +17,12 @@ router.get("/user/:user_id", (req, res) => {
     .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
 });
 
+router.get("/bartender/:user_id", (req, res) => {
+  Order.find({ takenBy: req.params.user_id })
+    .then((orders) => res.json(orders))
+    .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
+});
+
 router.get("/:id", (req, res) => {
   Order.findById(req.params.id)
     .then((order) => res.json(order))
@@ -64,7 +70,7 @@ router.post(
             location: req.body.location,
             notes: req.body.notes,
             price: req.body.price,
-            date: req.body.date,
+            createdAt: req.body.date,
             orderedBy: req.body.orderedBy,
           });
           newOrder.save().then((order) => res.json(order));
