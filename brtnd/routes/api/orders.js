@@ -1,14 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const passport = require("passport");
-const jwt = require("jsonwebtoken");
 
 const Order = require("../../models/Order");
-const User = require("../../models/User");
-const validateOrderInput = require("../../validation/order");
-
-// 607dc7f1bfb7c615c6304ba0
 
 router.get("/", (req, res) => {
   Order.find({})
@@ -58,12 +52,6 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    // const { errors, isValid } = validateOrderInput(req.body);
-
-    // if (!isValid) {
-    //   return res.status(400).json(errors);
-    // }
-
     let theOrder;
 
     Order.find({ orderedBy: req.body.orderedBy })
