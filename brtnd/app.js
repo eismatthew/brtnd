@@ -18,7 +18,7 @@ const db = require("./config/keys").mondoURI;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(passport.initialize());
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api/bartenders", bartenders);
