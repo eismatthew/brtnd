@@ -48,7 +48,7 @@ router.patch("/:id", (req, res) => {
       if (err) {
         console.log(err);
       }
-      console.log("Result: " + result);w
+      console.log("Result: " + result);
       res.send(result);
     }
   );
