@@ -6,12 +6,12 @@ import {
   RECEIVE_USER_SIGN_IN,
   RECEIVE_CURRENT_BARTENDER,
   RECEIVE_BARTENDER_LOGOUT,
-  RECEIVE_BARTENDER_SIGN_IN
-} from '../actions/session_actions';
+  RECEIVE_BARTENDER_SIGN_IN,
+} from "../actions/session_actions";
 
 const initialState = {
   isAuthenticated: false,
-  user: {}
+  user: {},
 };
 
 export default function (state = initialState, action) {
@@ -20,34 +20,34 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
-        user: action.currentUser
+        user: action.currentUser,
       };
     case RECEIVE_USER_LOGOUT:
       return {
         isAuthenticated: false,
-        user: undefined
+        user: undefined,
       };
     case RECEIVE_USER_SIGN_IN:
       return {
         ...state,
-        isSignedIn: true
+        isSignedIn: true,
       };
-      case RECEIVE_CURRENT_BARTENDER:
+    case RECEIVE_CURRENT_BARTENDER:
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
-        user: action.currentUser
+        user: action.currentUser,
       };
     case RECEIVE_BARTENDER_LOGOUT:
       return {
         isAuthenticated: false,
-        user: undefined
+        user: undefined,
       };
     case RECEIVE_BARTENDER_SIGN_IN:
       return {
         ...state,
-        isSignedIn: true
-      }
+        isSignedIn: true,
+      };
     default:
       return state;
   }

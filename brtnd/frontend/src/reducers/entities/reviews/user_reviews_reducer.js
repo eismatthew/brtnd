@@ -3,10 +3,13 @@ import {
   // syntax for bartender/user
   RECEIVE_USER_REVIEWS,
   RECEIVE_USER_REVIEW,
-  RECEIVE_NEW_USER_REVIEW
-} from '../actions/bartender_review_actions';
+  RECEIVE_NEW_USER_REVIEW,
+} from "../actions/bartender_review_actions";
 
-const UserReviewsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const UserReviewsReducer = (
+  state = { all: {}, user: {}, new: undefined },
+  action
+) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
