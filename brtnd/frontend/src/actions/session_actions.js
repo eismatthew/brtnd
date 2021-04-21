@@ -38,8 +38,8 @@ export const userSignup = (user) => (dispatch) =>
     (err) => dispatch(receiveErrors(err.response.data))
   );
 
-export const bartenderSignup = (bartender) => (dispatch) =>
-  APIUtil.bartenderSignup(bartender).then(
+export const bartenderSignup = (user) => (dispatch) =>
+  APIUtil.bartenderSignup(user).then(
     () => dispatch(receiveBartenderSignIn()),
     (err) => dispatch(receiveErrors(err.response.data))
   );
