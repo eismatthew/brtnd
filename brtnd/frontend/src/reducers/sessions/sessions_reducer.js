@@ -1,13 +1,9 @@
 import {
-  // rename
-  // syntax for bartender/user
   RECEIVE_CURRENT_USER,
-  RECEIVE_USER_LOGOUT,
+  RECEIVE_LOGOUT,
   RECEIVE_USER_SIGN_IN,
-  RECEIVE_CURRENT_BARTENDER,
-  RECEIVE_BARTENDER_LOGOUT,
   RECEIVE_BARTENDER_SIGN_IN,
-} from "../actions/session_actions";
+} from "../../actions/session_actions";
 
 const initialState = {
   isAuthenticated: false,
@@ -22,7 +18,7 @@ export default function (state = initialState, action) {
         isAuthenticated: !!action.currentUser,
         user: action.currentUser,
       };
-    case RECEIVE_USER_LOGOUT:
+    case RECEIVE_LOGOUT:
       return {
         isAuthenticated: false,
         user: undefined,

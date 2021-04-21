@@ -1,0 +1,99 @@
+body {
+  font-family: lato;
+  background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.review {
+  padding-left: 40px;
+}
+
+.review-container {
+  padding-top: 80px;
+}
+
+.review .rating {
+  color: white;
+}
+
+.radio-box  input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-box  label {
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-family: lato;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: .15s ease;
+}
+
+.radio-box  input[type="radio"]:checked + label {
+  background-color: white;
+  color: black;
+}
+
+.radio-box label:hover {
+  background-color: white;
+  color: #990000;
+  cursor: pointer;
+}
+
+.rating-header {
+  color: white;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 40px;
+  padding-top: 80px;
+  margin-bottom: 30px;
+}
+
+.sub {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+}
+
+.sub:hover {
+  color: white;
+  border: 2px solid #990000;
+  background-color: #990000;
+}
+
+.comments {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+textarea {
+  font-family: lato;
+  width: 100px;
+}
+
+.comments:focus{
+    outline: none;
+}

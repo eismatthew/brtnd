@@ -27,7 +27,7 @@ const BartenderSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  }
+  },
 });
 
 module.exports = Bartender = mongoose.model("bartenders", BartenderSchema);

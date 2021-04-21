@@ -1,37 +1,75 @@
-import * as APIUtil from '../util/session_api_util';
-import jwt_decode from 'jwt-decode';
+import * as APIUtil from "../util/session_api_util";
+import jwt_decode from "jwt-decode";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
+export const RECEIVE_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 export const RECEIVE_BARTENDER_SIGN_IN = "RECEIVE_BARTENDER_SIGN_IN";
+export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
-
-// We'll dispatch this when a user or bartender signs in
-export const receiveCurrentUser = currentUser => ({
+export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
-  currentUser
+  currentUser,
 });
 
-// This will be used to redirect a normal user (host) to the login page upon signup
 export const receiveUserSignIn = () => ({
   type: RECEIVE_USER_SIGN_IN,
-  // user
 });
 
 export const receiveBartenderSignIn = () => ({
   type: RECEIVE_BARTENDER_SIGN_IN,
-  // bartender
 });
 
+export const logout = () => ({ type: RECEIVE_LOGOUT });
 
-
-// We dispatch this one to show authentication errors on the frontend
-export const receiveErrors = errors => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
-  errors
+  errors,
 });
 
-// When
+export const clearSessionErrors = () => ({
+  type: CLEAR_SESSION_ERRORS,
+});
 
+export const userSignup = (user) => (dispatch) =>
+  APIUtil.userSignup(user).then(
+    () => dispatch(receiveUserSignIn()),
+    (err) => dispatch(receiveErrors(err.response.data))
+  );
+
+export const bartenderSignup = (bartender) => (dispatch) =>
+  APIUtil.bartenderSignup(bartender).then(
+    () => dispatch(receiveBartenderSignIn()),
+    (err) => dispatch(receiveErrors(err.response.data))
+  );
+
+export const userLogin = (user) => (dispatch) =>
+  APIUtil.userLogin(user)
+    .then((res) => {
+      const { token } = res.data;
+      localStorage.setItem("jwtToken", token);
+      API.setAuthToken(token);
+      const decoded = jwt_decode(token);
+      dispatch(receiveCurrentUser(decoded));
+    })
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
+
+export const bartenderrLogin = (user) => (dispatch) =>
+  APIUtil.bartenderLogin(user)
+    .then((res) => {
+      const { token } = res.data;
+      localStorage.setItem("jwtToken", token);
+      API.setAuthToken(token);
+      const decoded = jwt_decode(token);
+      dispatch(receiveCurrentUser(decoded));
+    })
+    .catch((err) => dispatch(receiveErrors(err.response.data)));
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("jwtToken");
+  APIUtil.setAuthToken(false);
+  dispatch(logout());
+};
+
+export const clearErrors = () => (dispatch) => dispatch(clearSessionErrors());
