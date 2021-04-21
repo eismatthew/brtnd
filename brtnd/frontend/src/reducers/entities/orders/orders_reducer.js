@@ -4,10 +4,13 @@ import {
   RECEIVE_ORDERS,
   RECEIVE_ORDER,
   RECEIVE_NEW_USER_ORDER,
-  RECEIVE_ACCEPT_BARTENDER_ORDER
-} from '../actions/order_actions';
+  RECEIVE_ACCEPT_BARTENDER_ORDER,
+} from "../actions/order_actions";
 
-const OrdersReducer = (state = { all: {}, user: {}, new: undefined, bartender: {} }, action) => {
+const OrdersReducer = (
+  state = { all: {}, user: {}, new: undefined, bartender: {} },
+  action
+) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
