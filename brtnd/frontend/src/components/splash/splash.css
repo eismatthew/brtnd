@@ -55,3 +55,7 @@
   border: 2px solid #d09a2d;
   background-color: #d09a2d;
 }
+
+.splash-buttons button:focus {
+  outline: white;
+}
