@@ -49,7 +49,7 @@ export const userLogin = (user) => (dispatch) =>
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
-      API.setAuthToken(token);
+      APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
     })
@@ -60,7 +60,7 @@ export const bartenderrLogin = (user) => (dispatch) =>
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
-      API.setAuthToken(token);
+      APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
     })

@@ -11,7 +11,7 @@ export const receiveOrders = (orders) => ({
 });
 
 export const receiveOrder = (order) => ({
-  type: RECEIVER_ORDER,
+  type: RECEIVE_ORDER,
   order,
 });
 
@@ -59,7 +59,7 @@ export const createOrder = (order) => (dispatch) =>
     );
 
 export const editOrder = (orderId) => (dispatch) =>
-  ordersUtril
+  ordersUtil
     .editOrder(orderId)
     .then((order) =>
       dispatch(receiveEditedOrder(order)).catch((err) => console.log(err))

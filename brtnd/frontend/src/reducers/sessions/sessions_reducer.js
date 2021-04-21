@@ -28,17 +28,6 @@ export default function (state = initialState, action) {
         ...state,
         isSignedIn: true,
       };
-    case RECEIVE_CURRENT_BARTENDER:
-      return {
-        ...state,
-        isAuthenticated: !!action.currentUser,
-        user: action.currentUser,
-      };
-    case RECEIVE_BARTENDER_LOGOUT:
-      return {
-        isAuthenticated: false,
-        user: undefined,
-      };
     case RECEIVE_BARTENDER_SIGN_IN:
       return {
         ...state,
