@@ -21,7 +21,7 @@ export const receiveBartenderSignIn = () => ({
   type: RECEIVE_BARTENDER_SIGN_IN,
 });
 
-export const logout = () => ({ type: RECEIVE_LOGOUT });
+export const receiveLogout = () => ({ type: RECEIVE_LOGOUT });
 
 export const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,

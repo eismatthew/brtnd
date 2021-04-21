@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 /config/keys.js
 /config/passport.js
-/node_modules
+node_modules
+frontend/node_modules
