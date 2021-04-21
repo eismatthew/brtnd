@@ -18,7 +18,7 @@ router.get(
 );
 
 router.get(
-  "/user/:user_id",
+  "/:user_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Order.find({ orderedBy: req.params.user_id })
@@ -28,7 +28,7 @@ router.get(
 );
 
 router.get(
-  "/bartender/:bartender_id",
+  "/:bartender_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Order.find({ takenBy: req.params.bartender_id })
