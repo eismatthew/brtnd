@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HostSessionForm from "./host_session_form";
 
-const HostSession = (props, { userLogin, userSignup }) => {
+const HostSession = ({ userLogin, userSignup }) => {
   const [sessionType, setSessionType] = useState("");
   useEffect(() => {
     return () => {};
@@ -10,7 +10,6 @@ const HostSession = (props, { userLogin, userSignup }) => {
   console.log(sessionType);
   console.log(userLogin);
   console.log(userSignup);
-  console.log(props);
   const display =
     sessionType === "" ? (
       <div>
