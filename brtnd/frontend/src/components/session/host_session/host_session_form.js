@@ -55,9 +55,11 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup, errors }) => {
           {formInputs}
           <input className="session-submit" type="submit" value={sessionType} />
         </div>
+        <SessionErrors errors={errors} />
       </form>
-      <SessionErrors errors={errors} />
+      
     </div>
+
   );
 };
 

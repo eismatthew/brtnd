@@ -12,7 +12,7 @@ const SignupFormInput = ({
           value={firstName}
           onChange={handleChange}
           className="signup-input"
-          placeholder="First Name"
+          placeholder="first name"
           name="firstName"
         />
       </div>
@@ -22,7 +22,7 @@ const SignupFormInput = ({
           value={lastName}
           onChange={handleChange}
           className="signup-input"
-          placeholder="Last Name"
+          placeholder="last name"
           name="lastName"
         />
       </div>
@@ -32,7 +32,7 @@ const SignupFormInput = ({
           value={email}
           onChange={handleChange}
           className="signup-input"
-          placeholder="Email"
+          placeholder="email"
           name="email"
         />
       </div>
@@ -42,7 +42,7 @@ const SignupFormInput = ({
           value={password}
           onChange={handleChange}
           className="signup-input"
-          placeholder="Password"
+          placeholder="password"
           name="password"
         />
       </div>
@@ -52,7 +52,7 @@ const SignupFormInput = ({
           value={password2}
           onChange={handleChange}
           className="signup-input"
-          placeholder="Confirm Password"
+          placeholder="confirm password"
           name="password2"
         />
       </div>
