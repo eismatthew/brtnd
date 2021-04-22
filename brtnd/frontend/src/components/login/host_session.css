@@ -68,6 +68,7 @@
   margin-bottom: 6px;
   padding-top: 4px;
   padding-bottom: 4px;
+  padding-left: 4px;
 }
 
 .login-input:focus {
@@ -87,3 +88,11 @@
   outline: none;
 }
 
+form input::placeholder {
+    padding-left: 4px;
+}
+
+form input[type="text"] {
+    padding-left: 4px;
+
+}
