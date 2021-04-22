@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginFormInput = ({ user:{email, password}, handleChange }) => {
+const LoginFormInput = ({ user: { email, password }, handleChange }) => {
   return (
     <div className="login-forms-main">
       <div className="login-input-container">

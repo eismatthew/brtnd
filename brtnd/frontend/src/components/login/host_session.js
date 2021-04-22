@@ -14,8 +14,8 @@ const HostSession = ({ userLogin, userSignup }) => {
   const display =
     sessionType === "" ? (
       <div className="enter-buttons">
-        <button onClick={() => setSessionType("login")}>Login</button>
-        <button onClick={() => setSessionType("signup")}>Sign Up</button>
+        <button onClick={() => setSessionType("Login")}>Login</button>
+        <button onClick={() => setSessionType("Sign up")}>Sign Up</button>
       </div>
     ) : (
       <div>

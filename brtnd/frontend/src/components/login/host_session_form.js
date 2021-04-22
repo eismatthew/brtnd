@@ -17,7 +17,7 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    sessionType === "login"
+    sessionType === "Login"
       ? setUser((prevUser) => ({
           ...prevUser,
           [name]: value,
@@ -30,7 +30,7 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sessionType === "login" ? userLogin(user) : userSignup(newUser);
+    sessionType === "Login" ? userLogin(user) : userSignup(newUser);
 
     setNewUser({
       firstName: "",
@@ -40,7 +40,7 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
     });
   };
   const formInputs =
-    sessionType === "login" ? (
+    sessionType === "Login" ? (
       <LoginFormInput user={user} handleChange={handleChange} />
     ) : (
       <SignupFormInput newUser={newUser} handleChange={handleChange} />

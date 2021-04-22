@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../navbar/navbar";
 import { Link } from "react-router-dom";
 
-import "./Splash.css";
+import "./splash.css";
 
 const Splash = () => {
   return (

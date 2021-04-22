@@ -55,9 +55,9 @@
   transition: 0.15s ease;
 }
 
-.session-submit button:hover {
+.session-submit:hover {
   color: white;
-  border: 2px solid #d09a2d;
+  border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
 
@@ -69,10 +69,17 @@
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 4px;
+  border-radius:  4px;
+}
+
+.login-input:hover {
+  outline: none;
+  border: 1px solid #d09a2d;
 }
 
 .login-input:focus {
   outline: none;
+  border: 1px solid #d09a2d;
 }
 
 .signup-input {
@@ -82,10 +89,17 @@
   margin-bottom: 6px;
   padding-top: 4px;
   padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+.signup-input:hover {
+  outline: none;
+  border: 1px solid #d09a2d;
 }
 
 .signup-input:focus {
   outline: none;
+  border: 1px solid #d09a2d;
 }
 
 form input::placeholder {
