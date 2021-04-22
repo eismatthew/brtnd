@@ -1,20 +1,16 @@
 import {
-  // rename
-  // syntax for bartender/user
   RECEIVE_CURRENT_USER,
-  RECEIVE_USER_LOGOUT,
+  RECEIVE_LOGOUT,
   RECEIVE_USER_SIGN_IN,
-  RECEIVE_CURRENT_BARTENDER,
-  RECEIVE_BARTENDER_LOGOUT,
   RECEIVE_BARTENDER_SIGN_IN,
-} from "../actions/session_actions";
+} from "../../actions/session_actions";
 
 const initialState = {
   isAuthenticated: false,
   user: {},
 };
 
-export default function (state = initialState, action) {
+const SessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -22,7 +18,7 @@ export default function (state = initialState, action) {
         isAuthenticated: !!action.currentUser,
         user: action.currentUser,
       };
-    case RECEIVE_USER_LOGOUT:
+    case RECEIVE_LOGOUT:
       return {
         isAuthenticated: false,
         user: undefined,
@@ -32,17 +28,6 @@ export default function (state = initialState, action) {
         ...state,
         isSignedIn: true,
       };
-    case RECEIVE_CURRENT_BARTENDER:
-      return {
-        ...state,
-        isAuthenticated: !!action.currentUser,
-        user: action.currentUser,
-      };
-    case RECEIVE_BARTENDER_LOGOUT:
-      return {
-        isAuthenticated: false,
-        user: undefined,
-      };
     case RECEIVE_BARTENDER_SIGN_IN:
       return {
         ...state,
@@ -51,4 +36,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default SessionReducer;

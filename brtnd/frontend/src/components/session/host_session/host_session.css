@@ -1,0 +1,135 @@
+.choose-session-main {
+  font-family: lato;
+  background-image: url("../../../images/q-u-i-S6atLH5Rf0U-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.enter-buttons {
+  padding-top: 330px;
+  padding-left: 60px;
+}
+
+.enter-buttons button {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+   font-weight: 300;
+  margin-right: 10px;
+  transition: 0.15s ease;
+}
+
+.enter-buttons button:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.enter-buttons button:focus {
+  outline: white;
+}
+
+.session-form-container {
+  padding-top: 300px;
+  padding-left: 40px;
+}
+.session-submit {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+   font-weight: 300;
+  margin-right: 10px;
+  transition: 0.15s ease;
+}
+
+.session-submit:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.session-change {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+   font-weight: 300;
+  margin-right: 10px;
+  transition: 0.15s ease;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.session-change:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.login-input {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  margin-bottom: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  border-radius:  4px;
+}
+
+.login-input:hover {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+.login-input:focus {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+.signup-input {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  margin-bottom: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
+
+
+.signup-input:hover {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+.signup-input:focus {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+form input::placeholder {
+    padding-left: 4px;
+}
+
+form input[type="text"] {
+    padding-left: 4px;
+
+}
