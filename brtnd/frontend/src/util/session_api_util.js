@@ -14,7 +14,7 @@ export const userSignup = (userData) =>
 export const userLogin = (userData) => axios.post("/api/users/login", userData);
 
 export const bartenderSignup = (userData) =>
-  axios.post("/api/bartender/signup", userData);
+  axios.post("/api/bartenders/signup", userData);
 
 export const bartenderLogin = (userData) =>
-  axios.post("/api/bartender/login", userData);
+  axios.post("/api/bartenders/login", userData);
