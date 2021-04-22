@@ -57,7 +57,7 @@ console.log(bartenderSignup)
           />
           <button
             type="button"
-            className="btn btn-dark"
+            className="session-change"
             onClick={() => setSessionType("Login")}
           >
             Returning User

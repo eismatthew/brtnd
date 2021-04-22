@@ -59,8 +59,8 @@ const BartenderSessionForm = ({
           {formInputs}
           <input className="session-submit" type="submit" value={sessionType} />
         </div>
-      </form>
       <SessionErrors errors={errors} />
+      </form>
     </div>
   );
 };

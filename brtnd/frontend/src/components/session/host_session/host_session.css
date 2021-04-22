@@ -39,7 +39,7 @@
 }
 
 .session-form-container {
-  padding-top: 300px;
+  padding-top: 200px;
   padding-left: 40px;
 }
 .session-submit {
@@ -55,6 +55,7 @@
   margin-right: 10px;
   transition: 0.15s ease;
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .session-submit:hover {
@@ -70,7 +71,7 @@
 .session-change {
   color: white;
   background-color: black;
-  border: 1px solid white;
+  border: 1px solid #d09a2d;
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
@@ -94,12 +95,13 @@
   color: white;
   background-color: black;
   border: 1px solid white;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 4px;
   border-radius:  4px;
   font-size: 18px;
+    transition: 0.15s ease;
 }
 
 .login-input:hover {
@@ -115,7 +117,7 @@
 .session-errors {
   color: white;
   text-shadow: 2px black;
-  width: 300px;
+  width: 260px;
   height: auto;
   padding: 0;
   margin: 0;
@@ -125,11 +127,20 @@
   color: white;
   background-color: black;
   border: 1px solid white;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
   border-radius: 4px;
   font-size: 18px;
+    transition: 0.15s ease;
+}
+
+.session-form-box {
+    border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
 }
 
 
@@ -149,5 +160,5 @@ form input::placeholder {
 
 form input[type="text"] {
     padding-left: 4px;
-
 }
+

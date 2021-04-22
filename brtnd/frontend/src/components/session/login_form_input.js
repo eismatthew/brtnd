@@ -9,7 +9,7 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
           value={email}
           className="login-input"
           onChange={handleChange}
-          placeholder="Email"
+          placeholder="email"
           name="email"
         />
       </div>
@@ -19,7 +19,7 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
           value={password}
           onChange={handleChange}
           className="login-input"
-          placeholder="Password"
+          placeholder="password"
           name="password"
         />
       </div>
