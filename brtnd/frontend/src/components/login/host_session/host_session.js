@@ -11,7 +11,6 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
       clearErrors();
     };
   }, [sessionType]);
-  console.log(errors);
 
   const display = () => {
     if (sessionType === "") {
@@ -52,7 +51,11 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
             errors={errors}
             clearErrors={clearErrors}
           />
-          <button onClick={() => setSessionType("Login")}>
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => setSessionType("Login")}
+          >
             Returning User
           </button>
         </div>
