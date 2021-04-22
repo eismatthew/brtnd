@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HostSessionForm from "./host_session_form";
+import './host_session.css';
 
 const HostSession = ({ userLogin, userSignup }) => {
   const [sessionType, setSessionType] = useState("");
@@ -12,9 +13,9 @@ const HostSession = ({ userLogin, userSignup }) => {
   console.log(userSignup);
   const display =
     sessionType === "" ? (
-      <div>
-        <div onClick={() => setSessionType("login")}>Login</div>
-        <div onClick={() => setSessionType("signup")}>Sign Up</div>
+      <div className="enter-buttons">
+        <button onClick={() => setSessionType("login")}>Login</button>
+        <button onClick={() => setSessionType("signup")}>Sign Up</button>
       </div>
     ) : (
       <div>
@@ -26,7 +27,7 @@ const HostSession = ({ userLogin, userSignup }) => {
       </div>
     );
 
-  return <div>{display}</div>;
+  return <div className="choose-session-main">{display}</div>;
 };
 
 export default HostSession;

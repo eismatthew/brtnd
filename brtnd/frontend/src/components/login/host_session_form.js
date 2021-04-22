@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LoginFormInput from "./login_form_input";
 import SignupFormInput from "./signup_form_input";
+import './host_session.css';
 
 const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
   const [newUser, setNewUser] = useState({

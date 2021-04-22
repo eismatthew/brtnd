@@ -7,8 +7,8 @@ const LoginFormInput = ({ user:{email, password}, handleChange }) => {
         <input
           type="text"
           value={email}
-          onChange={handleChange}
           className="login-input"
+          onChange={handleChange}
           placeholder="Email"
           name="email"
         />
