@@ -10,7 +10,7 @@ const initialState = {
   user: {},
 };
 
-export default function (state = initialState, action) {
+const SessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -36,4 +36,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default SessionReducer;

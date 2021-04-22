@@ -8,27 +8,27 @@ export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 export const RECEIVE_BARTENDER_SIGN_IN = "RECEIVE_BARTENDER_SIGN_IN";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
-export const receiveCurrentUser = (currentUser) => ({
+const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser,
 });
 
-export const receiveUserSignIn = () => ({
+const receiveUserSignIn = () => ({
   type: RECEIVE_USER_SIGN_IN,
 });
 
-export const receiveBartenderSignIn = () => ({
+const receiveBartenderSignIn = () => ({
   type: RECEIVE_BARTENDER_SIGN_IN,
 });
 
-export const receiveLogout = () => ({ type: RECEIVE_LOGOUT });
+const receiveLogout = () => ({ type: RECEIVE_LOGOUT });
 
-export const receiveErrors = (errors) => ({
+const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors,
 });
 
-export const clearSessionErrors = () => ({
+const clearSessionErrors = () => ({
   type: CLEAR_SESSION_ERRORS,
 });
 
@@ -69,7 +69,7 @@ export const bartenderrLogin = (user) => (dispatch) =>
 export const logout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");
   APIUtil.setAuthToken(false);
-  dispatch(logout());
+  dispatch(receiveLogout());
 };
 
 export const clearErrors = () => (dispatch) => dispatch(clearSessionErrors());

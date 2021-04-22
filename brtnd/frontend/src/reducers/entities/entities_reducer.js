@@ -5,7 +5,6 @@ import reviews from "./reviews/reviews_reducer";
 const RootReducer = combineReducers({
   orders,
   reviews,
-  orders,
 });
 
 export default RootReducer;

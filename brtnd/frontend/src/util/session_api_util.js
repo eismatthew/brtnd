@@ -8,18 +8,13 @@ export const setAuthToken = (token) => {
   }
 };
 
-export const userSignup = (userData) => {
-  return axios.post("/api/users/signup", userData);
-};
+export const userSignup = (userData) =>
+  axios.post("/api/users/signup", userData);
 
-export const userLogin = (userData) => {
-  return axios.post("/api/users/login", userData);
-};
+export const userLogin = (userData) => axios.post("/api/users/login", userData);
 
-export const bartenderSignup = (userData) => {
-  return axios.post("/api/bartender/signup", userData);
-};
+export const bartenderSignup = (userData) =>
+  axios.post("/api/bartender/signup", userData);
 
-export const bartenderLogin = (userData) => {
-  return axios.post("/api/bartender/login", userData);
-};
+export const bartenderLogin = (userData) =>
+  axios.post("/api/bartender/login", userData);

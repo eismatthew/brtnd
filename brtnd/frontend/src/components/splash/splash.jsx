@@ -1,9 +1,10 @@
 import React from "react";
-import "./Splash.css";
 import Navbar from "../navbar/navbar";
 import { Link } from "react-router-dom";
 
-const Splash = (props) => {
+import "./Splash.css";
+
+const Splash = () => {
   return (
     <div className="splash-main">
       <div className="splash-content">
@@ -18,8 +19,12 @@ const Splash = (props) => {
           </h3>
         </div>
         <div className="splash-buttons">
-          <button>Enter as host</button>
-          <button>Enter as bartender</button>
+          <Link to="/host-session" className="session-button">
+            <button>Enter as host</button>
+          </Link>
+          <Link to="/bartender-session" className="session-button">
+            <button>Enter as bartender</button>
+          </Link>
         </div>
       </div>
     </div>

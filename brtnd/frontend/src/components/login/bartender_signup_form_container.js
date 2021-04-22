@@ -1,20 +1,17 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { bartenderSignup } from '../../actions/session_actions';
-import SessionForm from './session_form';
-
+import { connect } from "react-redux";
+import { bartenderSignup } from "../../actions/session_actions";
+import SessionForm from "./host_session";
 
 const mapStateToProps = ({ errors }) => {
   return {
-    errors: errors.session,
-    formType: 'signup', //'bartenderSignup'
+    errors,
+    formType: "signup",
   };
 };
 
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    processForm: (user) => dispatch(bartenderSignup(user))
+    processForm: (user) => dispatch(bartenderSignup(user)),
   };
 };
 
