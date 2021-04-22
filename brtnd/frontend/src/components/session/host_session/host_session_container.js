@@ -3,7 +3,7 @@ import {
   userLogin,
   userSignup,
   clearErrors,
-} from "../../actions/session_actions";
+} from "../../../actions/session_actions";
 import HostSession from "./host_session";
 
 const mSTP = ({ errors }) => ({ errors });
