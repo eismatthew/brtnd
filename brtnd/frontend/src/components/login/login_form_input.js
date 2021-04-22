@@ -5,6 +5,7 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
     <div className="login-forms-main">
       <div className="login-input-container">
         <input
+          className="form-control"
           type="text"
           value={email}
           className="login-input"
@@ -15,6 +16,7 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
       </div>
       <div className="login-input-container">
         <input
+          className="form-control"
           type="password"
           value={password}
           onChange={handleChange}

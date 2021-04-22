@@ -1,45 +1,65 @@
 import React, { useState, useEffect } from "react";
 import HostSessionForm from "./host_session_form";
-import './host_session.css';
 
-const HostSession = ({ userLogin, userSignup }) => {
+import "./host_session.css";
+
+const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
   const [sessionType, setSessionType] = useState("");
+
   useEffect(() => {
-    return () => {};
-  }, []);
+    return () => {
+      clearErrors();
+    };
+  }, [sessionType]);
+  console.log(errors);
 
-  console.log(sessionType);
-  console.log(userLogin);
-  console.log(userSignup);
-  const display =
-    sessionType === "" ? (
-      <div className="enter-buttons">
-        <button onClick={() => setSessionType("Login")}>Login</button>
-        <button onClick={() => setSessionType("Sign up")}>Sign Up</button>
-      </div>
-    ) : (
-      <div>
-        <HostSessionForm
-          sessionType={sessionType}
-          userLogin={userLogin}
-          userSignup={userSignup}
-        />
-      </div>
-    );
+  const display = () => {
+    if (sessionType === "") {
+      return (
+        <div className="enter-buttons">
+          <button onClick={() => setSessionType("Login")}>Login</button>
+          <button onClick={() => setSessionType("Sign up")}>Sign Up</button>
+        </div>
+      );
+    }
 
-  return <div className="choose-session-main">{display}</div>;
+    if (sessionType === "Login") {
+      return (
+        <div>
+          <HostSessionForm
+            sessionType={sessionType}
+            userLogin={userLogin}
+            userSignup={userSignup}
+            errors={errors}
+            clearErrors={clearErrors}
+          />
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => setSessionType("Sign up")}
+          >
+            New User
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <HostSessionForm
+            sessionType={sessionType}
+            userLogin={userLogin}
+            userSignup={userSignup}
+            errors={errors}
+            clearErrors={clearErrors}
+          />
+          <button onClick={() => setSessionType("Login")}>
+            Returning User
+          </button>
+        </div>
+      );
+    }
+  };
+  return <div className="choose-session-main">{display()}</div>;
 };
 
 export default HostSession;
-
-// renderErrors(){
-//   return(
-//     <ul className='error-container'>
-//       {this.props.errors.map((error, i) => (
-//         <li key={`error-${i}`}>
-//           {error}
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }

@@ -2,7 +2,7 @@ import React from "react";
 
 const SignupFormInput = ({
   newUser: { firstName, lastName, password, email },
-  handleChange,
+  handleChange, password2
 }) => {
   return (
     <div className="signup-forms-main">
@@ -40,6 +40,16 @@ const SignupFormInput = ({
         <input
           type="password"
           value={password}
+          onChange={handleChange}
+          className="signup-input"
+          placeholder="Password"
+          name="password"
+        />
+      </div>
+      <div className="signup-input-container">
+        <input
+          type="password"
+          value={password2}
           onChange={handleChange}
           className="signup-input"
           placeholder="Password"

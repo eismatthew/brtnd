@@ -29,7 +29,7 @@
 
 .enter-buttons button:hover {
   color: white;
-  border: 2px solid #d09a2d;
+  border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
 

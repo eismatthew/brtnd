@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import LoginFormInput from "./login_form_input";
 import SignupFormInput from "./signup_form_input";
-import './host_session.css';
+import SessionErrors from "./sessions_errors";
+import "./host_session.css";
 
-const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
+const HostSessionForm = ({ sessionType, userLogin, userSignup, errors }) => {
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
+    password2: "",
   });
   const [user, setUser] = useState({
     email: "",
@@ -53,6 +55,7 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup }) => {
           <input className="session-submit" type="submit" value={sessionType} />
         </div>
       </form>
+      <SessionErrors errors={errors} />
     </div>
   );
 };

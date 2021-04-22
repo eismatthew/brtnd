@@ -55,7 +55,7 @@ export const userLogin = (user) => (dispatch) =>
     })
     .catch((err) => dispatch(receiveErrors(err.response.data)));
 
-export const bartenderrLogin = (user) => (dispatch) =>
+export const bartenderLogin = (user) => (dispatch) =>
   APIUtil.bartenderLogin(user)
     .then((res) => {
       const { token } = res.data;
