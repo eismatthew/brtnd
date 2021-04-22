@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import './bartender-profile.css';
+import './host-profile.css';
 
-const BartenderProfile = ({}) => {
+const HostProfile = ({ }) => {
 
   return (
-    <div className="bartender-profile-main">
+    <div className="host-profile-main">
       <div className="welcome">
         <h1>Welcome, name</h1>
-
         <div className="find-orders">
-          <button>Browse open orders</button>
+          <button>Start an order</button>
         </div>
         <h3>Your orders</h3>
         <div className="bartender-order-box">
@@ -22,4 +21,4 @@ const BartenderProfile = ({}) => {
 
 }
 
-export default BartenderProfile;
+export default HostProfile;
