@@ -5,10 +5,9 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
     <div className="login-forms-main">
       <div className="login-input-container">
         <input
-          className="form-control"
           type="text"
           value={email}
-          className="login-input"
+          className="login-input form-control"
           onChange={handleChange}
           placeholder="Email"
           name="email"
@@ -16,11 +15,10 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
       </div>
       <div className="login-input-container">
         <input
-          className="form-control"
           type="password"
           value={password}
           onChange={handleChange}
-          className="login-input"
+          className="login-input form-control"
           placeholder="Password"
           name="password"
         />

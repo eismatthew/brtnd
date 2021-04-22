@@ -30,7 +30,6 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
             userLogin={userLogin}
             userSignup={userSignup}
             errors={errors}
-            clearErrors={clearErrors}
           />
           <button
             type="button"
@@ -49,7 +48,6 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
             userLogin={userLogin}
             userSignup={userSignup}
             errors={errors}
-            clearErrors={clearErrors}
           />
           <button
             type="button"

@@ -1,12 +1,17 @@
 import { connect } from "react-redux";
-import { bartenderSignup, bartenderLogin } from "../../actions/session_actions";
+import {
+  bartenderSignup,
+  bartenderLogin,
+  clearErrors,
+} from "../../../actions/session_actions";
 import BartenderSession from "./bartender_session";
 
-const mSTP = (errors) => ({ errors });
+const mSTP = ({ errors }) => ({ errors });
 
 const mDTP = (dispatch) => ({
-  userLogin: (user) => dispatch(userLogin(user)),
-  userSignup: (user) => dispatch(userSignup(user)),
+  bartenderLogin: (user) => dispatch(bartenderLogin(user)),
+  bartenderSignup: (user) => dispatch(bartenderSignup(user)),
+  clearErrors: () => dispatch(clearErrors()),
 });
 
-export default connect(null, mDTP)(BartenderSession);
+export default connect(mSTP, mDTP)(BartenderSession);

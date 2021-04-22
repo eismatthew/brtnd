@@ -1,34 +1,72 @@
 import React, { useState, useEffect } from "react";
-import BartenderSessionForm from "./host_session_form";
-import Button from 'react-bootstrap/Button';
-import './bartender_session.css';
+import BartenderSessionForm from "./bartender_session_form";
 
-const BartenderSession = ({ userLogin, userSignup }) => {
+import "./bartender_session.css";
+
+const BartenderSession = ({
+  bartenderLogin,
+  bartenderSignup,
+  clearErrors,
+  errors,
+}) => {
   const [sessionType, setSessionType] = useState("");
+console.log(bartenderLogin)
+console.log(bartenderSignup)
   useEffect(() => {
-    return () => {};
-  },[]);
+    return () => {
+      clearErrors();
+    };
+  }, [sessionType]);
 
-  console.log(sessionType);
-  console.log(userLogin);
-  console.log(userSignup);
-  const display =
-    sessionType === "" ? (
-      <div className="enter-buttons">
-        <Button onClick={() => setSessionType("Login")}>Login</Button>
-        <Button onClick={() => setSessionType("Sign up")}>Sign Up</Button>
-      </div>
-    ) : (
-      <div>
-        <BartenderSessionForm
-          sessionType={sessionType}
-          userLogin={userLogin}
-          userSignup={userSignup}
-        />
-      </div>
-    );
+  const display = () => {
+    if (sessionType === "") {
+      return (
+        <div className="enter-buttons">
+          <button onClick={() => setSessionType("Login")}>Login</button>
+          <button onClick={() => setSessionType("Sign up")}>Sign Up</button>
+        </div>
+      );
+    }
 
-  return <div className="choose-session-main">{display}</div>;
+    if (sessionType === "Login") {
+      return (
+        <div>
+          <BartenderSessionForm
+            sessionType={sessionType}
+            bartenderLogin={bartenderLogin}
+            bartenderSignup={bartenderSignup}
+            errors={errors}
+          />
+          <button
+            type="button"
+            className="session-change"
+            onClick={() => setSessionType("Sign up")}
+          >
+            New User
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <BartenderSessionForm
+            sessionType={sessionType}
+            bartenderLogin={bartenderLogin}
+            bartenderSignup={bartenderSignup}
+            errors={errors}
+          />
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => setSessionType("Login")}
+          >
+            Returning User
+          </button>
+        </div>
+      );
+    }
+  };
+  return <div className="choose-session-main">{display()}</div>;
 };
 
 export default BartenderSession;
