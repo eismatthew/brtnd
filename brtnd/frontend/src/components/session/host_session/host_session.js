@@ -53,7 +53,7 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
           />
           <button
             type="button"
-            className="btn btn-dark"
+            className="session-change"
             onClick={() => setSessionType("Login")}
           >
             Returning User

@@ -5,7 +5,7 @@ const SessionErrors = ({ errors }) => {
     return <div key={i}>{error}</div>;
   });
 
-  return <div>{sessionErrors}</div>;
+  return <div className="session-errors">{sessionErrors}</div>;
 };
 
 export default SessionErrors;
