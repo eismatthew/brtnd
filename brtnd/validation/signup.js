@@ -11,19 +11,19 @@ module.exports = function validateSignupInput(data) {
   data.password2 = validText(data.password2) ? data.password2 : "";
 
   if (!Validator.isLength(data.firstName, { min: 2, max: 20 })) {
-    errors.firstName = "firstName must be between 2 and 20 characters";
+    errors.firstName = "First name must be between 2 and 20 characters";
   }
 
   if (Validator.isEmpty(data.firstName)) {
-    errors.firstName = "firstName field is required";
+    errors.firstName = "First name field is required";
   }
 
   if (!Validator.isLength(data.lastName, { min: 2, max: 20 })) {
-    errors.lastName = "lastName must be between 2 and 20 characters";
+    errors.lastName = "Last name must be between 2 and 20 characters";
   }
 
   if (Validator.isEmpty(data.lastName)) {
-    errors.lastName = "lastName field is required";
+    errors.lastName = "Last name field is required";
   }
 
   if (Validator.isEmpty(data.email)) {

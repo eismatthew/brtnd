@@ -14,11 +14,12 @@
   padding-left: 60px;
   padding-top: 80px;
   font-size: 30px;
-
+  font-weight: 300;
 }
 
-h1 {
+.splash-title h1 {
   font-weight: 300;
+  font-size: 50px;
 }
 
 .splash-copy {
@@ -57,7 +58,7 @@ h1 {
 
 .splash-buttons button:hover {
   color: white;
-  border: 2px solid #d09a2d;
+  border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
 

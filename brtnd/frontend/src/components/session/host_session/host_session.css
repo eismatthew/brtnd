@@ -6,6 +6,7 @@
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .enter-buttons {
@@ -53,6 +54,7 @@
    font-weight: 300;
   margin-right: 10px;
   transition: 0.15s ease;
+    font-size: 18px;
 }
 
 .session-submit:hover {
@@ -60,6 +62,10 @@
   border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
+
+.session-submit:focus {
+  outline: none;
+} 
 
 .session-change {
   color: white;
@@ -73,8 +79,9 @@
    font-weight: 300;
   margin-right: 10px;
   transition: 0.15s ease;
-  margin-top: 10px;
+  margin-top: 6px;
   margin-left: 40px;
+  font-size: 18px;
 }
 
 .session-change:hover {
@@ -92,6 +99,7 @@
   padding-bottom: 4px;
   padding-left: 4px;
   border-radius:  4px;
+  font-size: 18px;
 }
 
 .login-input:hover {
@@ -104,6 +112,15 @@
   border: 1px solid #d09a2d;
 }
 
+.session-errors {
+  color: white;
+  text-shadow: 2px black;
+  width: 300px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
 .signup-input {
   color: white;
   background-color: black;
@@ -112,6 +129,7 @@
   padding-top: 4px;
   padding-bottom: 4px;
   border-radius: 4px;
+  font-size: 18px;
 }
 
 
