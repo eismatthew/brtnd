@@ -35,7 +35,7 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
           />
           <button
             type="button"
-            className="btn btn-dark"
+            className="session-change"
             onClick={() => setSessionType("Sign up")}
           >
             New User

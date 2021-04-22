@@ -2,7 +2,7 @@ import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch } from "react-router-dom";
 
-import Splash from "./splash/Splash";
+import Splash from "./splash/splash";
 import HostSessionContainer from "./login/host_session_container";
 
 
