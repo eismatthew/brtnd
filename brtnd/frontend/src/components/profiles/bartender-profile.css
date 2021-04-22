@@ -1,0 +1,53 @@
+.bartender-profile-main {
+  font-family: lato;
+  background-image: url("images/cater-yang-1a_u4n02YNo-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h3 {
+  padding: 0;
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.welcome {
+  color: white;
+  padding-top: 60px;
+  padding-left: 40px;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+button {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  color: white;
+  border: 2px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.bartender-order-box {
+  background:rgba(0, 0, 0, 0.425);
+  border: 1px solid white;
+  width: 300px;
+  height: 200px;
+  border-radius: 4px;
+}
