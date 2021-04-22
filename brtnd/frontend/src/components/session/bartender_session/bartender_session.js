@@ -10,8 +10,6 @@ const BartenderSession = ({
   errors,
 }) => {
   const [sessionType, setSessionType] = useState("");
-console.log(bartenderLogin)
-console.log(bartenderSignup)
   useEffect(() => {
     return () => {
       clearErrors();

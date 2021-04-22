@@ -44,6 +44,7 @@ const BartenderSessionForm = ({
       lastName: "",
       email: "",
       password: "",
+      password2: "",
     });
   };
   const formInputs =

@@ -32,23 +32,46 @@ const clearSessionErrors = () => ({
   type: CLEAR_SESSION_ERRORS,
 });
 
-export const userSignup = (user) => (dispatch) =>
+export const userSignup = (user) => (dispatch) => {
+  const newUser = { email: user.email, password: user.password };
   APIUtil.userSignup(user).then(
-    () => dispatch(receiveUserSignIn()),
+    () =>
+      APIUtil.userLogin(newUser).then((res) => {
+        console.log(res.data);
+        const { token } = res.data;
+        localStorage.setItem("jwtToken", token);
+        localStorage.setItem("bartender", false);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded));
+      }),
     (err) => dispatch(receiveErrors(err.response.data))
   );
+};
 
-export const bartenderSignup = (user) => (dispatch) =>
+export const bartenderSignup = (user) => (dispatch) => {
+  const newUser = { email: user.email, password: user.password };
   APIUtil.bartenderSignup(user).then(
-    () => dispatch(receiveBartenderSignIn()),
+    () =>
+      APIUtil.bartenderLogin(newUser).then((res) => {
+        console.log(res.data);
+        const { token } = res.data;
+        localStorage.setItem("jwtToken", token);
+        localStorage.setItem("bartender", true);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded));
+      }),
     (err) => dispatch(receiveErrors(err.response.data))
   );
+};
 
 export const userLogin = (user) => (dispatch) =>
   APIUtil.userLogin(user)
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
+      localStorage.setItem("bartender", false);
       APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));
@@ -60,6 +83,7 @@ export const bartenderLogin = (user) => (dispatch) =>
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
+      localStorage.setItem("bartender", true);
       APIUtil.setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(receiveCurrentUser(decoded));

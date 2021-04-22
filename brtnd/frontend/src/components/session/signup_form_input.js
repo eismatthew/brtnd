@@ -1,8 +1,8 @@
 import React from "react";
 
 const SignupFormInput = ({
-  newUser: { firstName, lastName, password, email },
-  handleChange, password2
+  newUser: { firstName, lastName, password, email, password2 },
+  handleChange,
 }) => {
   return (
     <div className="signup-forms-main">
@@ -52,8 +52,8 @@ const SignupFormInput = ({
           value={password2}
           onChange={handleChange}
           className="signup-input"
-          placeholder="Password"
-          name="password"
+          placeholder="Confirm Password"
+          name="password2"
         />
       </div>
     </div>

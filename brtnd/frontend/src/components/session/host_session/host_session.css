@@ -23,7 +23,7 @@
   padding: 10px;
   padding-right: 30px;
   padding-left: 30px;
-   font-weight: 300;
+  font-weight: 300;
   margin-right: 10px;
   transition: 0.15s ease;
 }
@@ -51,10 +51,10 @@
   padding: 10px;
   padding-right: 30px;
   padding-left: 30px;
-   font-weight: 300;
+  font-weight: 300;
   margin-right: 10px;
   transition: 0.15s ease;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .session-submit:hover {
@@ -65,7 +65,7 @@
 
 .session-submit:focus {
   outline: none;
-} 
+}
 
 .session-change {
   color: white;
@@ -76,7 +76,7 @@
   padding: 10px;
   padding-right: 30px;
   padding-left: 30px;
-   font-weight: 300;
+  font-weight: 300;
   margin-right: 10px;
   transition: 0.15s ease;
   margin-top: 6px;
@@ -98,7 +98,7 @@
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 4px;
-  border-radius:  4px;
+  border-radius: 4px;
   font-size: 18px;
 }
 
@@ -132,7 +132,6 @@
   font-size: 18px;
 }
 
-
 .signup-input:hover {
   outline: none;
   border: 1px solid #d09a2d;
@@ -144,10 +143,9 @@
 }
 
 form input::placeholder {
-    padding-left: 4px;
+  padding-left: 4px;
 }
 
 form input[type="text"] {
-    padding-left: 4px;
-
+  padding-left: 4px;
 }

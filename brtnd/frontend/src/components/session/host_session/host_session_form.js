@@ -39,6 +39,7 @@ const HostSessionForm = ({ sessionType, userLogin, userSignup, errors }) => {
       lastName: "",
       email: "",
       password: "",
+      password2: "",
     });
   };
   const formInputs =
