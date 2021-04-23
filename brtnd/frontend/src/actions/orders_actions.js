@@ -4,6 +4,8 @@ export const RECEIVE_ORDERS = "RECEIVE_ORDERS";
 export const RECEIVE_ORDER = "RECEIVE_ORDER";
 export const RECEIVE_NEW_ORDER = "RECEIVE_NEW_ORDER";
 export const RECEIVE_EDITED_ORDER = "RECEIVE_EDITED_ORDER";
+export const RECEIVE_ORDER_ERRORS = "RECEIVE_ORDER_ERRORS";
+export const CLEAR_ORDER_ERRORS = "CLEAR_ORDER_ERRORS";
 
 export const receiveOrders = (orders) => ({
   type: RECEIVE_ORDERS,
@@ -23,6 +25,18 @@ export const receiveEditedOrder = (order) => ({
   type: RECEIVE_EDITED_ORDER,
   order,
 });
+
+const receiveOrderErrors = (errors) => ({
+  type: RECEIVE_ORDER_ERRORS,
+  errors,
+});
+
+const clearOrderErrors = () => ({
+  type: CLEAR_ORDER_ERRORS,
+});
+
+
+
 export const fetchAllOrders = () => (dispatch) =>
   ordersUtil
     .getAllOrders()
@@ -64,3 +78,6 @@ export const editOrder = (orderId) => (dispatch) =>
     .then((order) =>
       dispatch(receiveEditedOrder(order)).catch((err) => console.log(err))
     );
+
+
+    export const clearErrors = () => (dispatch) => dispatch(clearOrderErrors());
