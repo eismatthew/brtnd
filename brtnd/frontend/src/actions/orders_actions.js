@@ -26,10 +26,10 @@ export const receiveEditedOrder = (order) => ({
   order,
 });
 
-// const receiveOrderErrors = (errors) => ({
-//   type: RECEIVE_ORDER_ERRORS,
-//   errors,
-// });
+const receiveOrderErrors = (errors) => ({
+  type: RECEIVE_ORDER_ERRORS,
+  errors,
+});
 
 // const clearOrderErrors = () => ({
 //   type: CLEAR_ORDER_ERRORS,
@@ -66,9 +66,8 @@ export const fetchOrder = (orderId) => (dispatch) =>
 export const createOrder = (order) => (dispatch) =>
   ordersUtil
     .createOrder(order)
-    .then((order) =>
-      dispatch(receiveNewOrder(order)).catch((err) => console.log(err))
-    );
+    .then((order) => dispatch(receiveNewOrder(order)))
+    .catch((err) => console.log(err.response.data));
 
 export const editOrder = (orderId) => (dispatch) =>
   ordersUtil

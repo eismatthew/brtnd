@@ -15,7 +15,7 @@ const OrdersReducer = (state = {}, action) => {
     case RECEIVE_ORDER:
       return { ...newState, ...action.order.data };
     case RECEIVE_NEW_ORDER:
-      return (newState.action.order.data._id = action.order.data);
+      return action.order.data
     case RECEIVE_EDITED_ORDER:
       return (newState.action.order.data._id = action.order.data);
     default:

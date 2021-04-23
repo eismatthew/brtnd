@@ -11,7 +11,7 @@ const validateLoginInput = require("../../validation/login");
 
 router.get(
   "/current",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("bartender", { session: false }),
   (req, res) => {
     res.json({
       id: req.user.id,
