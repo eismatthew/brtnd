@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import {Link, Redirect} from "react-router-dom";
 import "./order_form.css";
 
 const OrderForm = ({ createOrder, errors }) => {
@@ -39,7 +39,8 @@ const OrderForm = ({ createOrder, errors }) => {
       price: 0,
       orderedBy: orderedBy,
       takenBy: "",
-    });
+    })
+    // props.history.push("/profile")
   };
 
   const handleChange = (e) => {
@@ -52,12 +53,15 @@ const OrderForm = ({ createOrder, errors }) => {
 
   return (
     <div className="order-form-parent-container">
+      <h3 className="logo">brtnd</h3>
+      <div clasName="order-form-space">
+      <div className="order-form-box">
       <div className="order-form-main">
         <div className="order-header">
           <h1>Order a bartender</h1>
         </div>
 
-        <form className="order-form" onSubmit={handleSubmit}>
+        <form className="order-form" onSubmit={handleSubmit} >
           <div className="order-form-headcount">
             <label className="select">Select your headcount</label>
             <div className="quantity">
@@ -125,6 +129,9 @@ const OrderForm = ({ createOrder, errors }) => {
           />
           <input className="sub" type="submit" value="Place Order" />
         </form>
+      </div>
+          <Link to="/profile"><button className="to-profile">Back to profile</button></Link>
+      </div>
       </div>
     </div>
   );

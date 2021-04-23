@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./host_profile";
+import {Link} from "react-router-dom";
 
 const HostProfile = ({ id, currentUser: { firstName } }) => {
   return (
@@ -10,13 +11,13 @@ const HostProfile = ({ id, currentUser: { firstName } }) => {
             <h1>Welcome, {firstName}</h1>
 
             <div className="start-order">
-              <button className="profile-button">Start an order</button>
+              <Link to="/order-form"><button className="profile-button">Start an order</button></Link>
             </div>
           </div>
           <div className="profile-order-box">
           <h3>Your orders</h3>
           <div className="bartender-order-box">
-            <p>Active order here</p>
+            <p className="active-header">Active orders</p>
           </div>
           </div>
         </div>
