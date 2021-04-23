@@ -11,6 +11,7 @@ import {
   faSave,
 } from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner";
+import "./active_orders.css";
 
 const ActiveOrders = ({ id }) => {
   const [orderCount, setOrderCount] = useState(0);
@@ -58,14 +59,14 @@ const ActiveOrders = ({ id }) => {
 
     if (!editMode && !loading && order !== undefined) {
       return (
-        <div>
+        <div className="order-display">
           <div>{order.headCount}</div>
           <div>{order.location}</div>
           <div>{order.tier}</div>
           <div>{order.notes}</div>
           <div>{order.price}</div>
           <div>{order.takenBy}</div>
-          <FontAwesomeIcon icon={faEllipsisH} onClick={handleEditMode} />
+          <FontAwesomeIcon icon={faEllipsisH} className="edit-icon" onClick={handleEditMode} />
         </div>
       );
     } else if (order === undefined) {
@@ -75,7 +76,7 @@ const ActiveOrders = ({ id }) => {
         <div>
           <div>
             <input
-              className="edit-headcount"
+              className="edit-order"
               value={order.headCount}
               name="headCount"
               onChange={handleEditOrder}
@@ -83,7 +84,7 @@ const ActiveOrders = ({ id }) => {
           </div>
           <div>
             <input
-              className="edit-location"
+              className="edit-order"
               value={order.location}
               name="location"
               onChange={handleEditOrder}
@@ -91,7 +92,7 @@ const ActiveOrders = ({ id }) => {
           </div>
           <div>
             <input
-              className="edit-tier"
+              className="edit-order"
               value={order.tier}
               name="tier"
               onChange={handleEditOrder}
@@ -99,7 +100,7 @@ const ActiveOrders = ({ id }) => {
           </div>
           <div>
             <input
-              className="edit-notes"
+              className="edit-order"
               value={order.notes}
               name="notes"
               onChange={handleEditOrder}
@@ -110,8 +111,8 @@ const ActiveOrders = ({ id }) => {
             className="delete-icon"
             onClick={handleDeleteOrder}
           />
-          <FontAwesomeIcon icon={faSave} onClick={handleOrderPatch} />
-          <FontAwesomeIcon icon={faEllipsisH} onClick={handleEditMode} />
+          <FontAwesomeIcon icon={faSave} className="save-icon" onClick={handleOrderPatch} />
+          <FontAwesomeIcon icon={faEllipsisH} className="edit-icon" onClick={handleEditMode} />
         </div>
       );
     }
