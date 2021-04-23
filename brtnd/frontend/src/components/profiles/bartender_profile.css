@@ -129,6 +129,12 @@ color: white;
     margin-left: 80px;
 }
 
+.review-box::-webkit-scrollbar {
+  width: 0;
+  display: none;
+  background: transparent;
+}
+
 .review-box h3 {
   color: white;
   font-weight: 300;
