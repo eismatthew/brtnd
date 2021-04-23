@@ -91,6 +91,29 @@
   background-color: #d09a2d;
 }
 
+.demo-button {
+  color: white;
+  background-color: black;
+  border: 1px solid #d09a2d;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-weight: 300;
+  margin-right: 10px;
+  transition: 0.15s ease;
+  margin-top: 6px;
+  margin-left: 2px;
+  font-size: 18px;
+}
+
+.demo-button:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
 .login-input {
   color: white;
   background-color: black;

@@ -26,4 +26,5 @@ const LoginFormInput = ({ user: { email, password }, handleChange }) => {
     </div>
   );
 };
+
 export default LoginFormInput;
