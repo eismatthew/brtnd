@@ -3,7 +3,7 @@ import HostSessionForm from "./host_session_form";
 
 import "./host_session.css";
 
-const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
+const HostSession = ({ errors, userLogin, userSignup, clearErrors, hostDemoLogin }) => {
   const [sessionType, setSessionType] = useState("");
 
   useEffect(() => {
@@ -38,6 +38,11 @@ const HostSession = ({ errors, userLogin, userSignup, clearErrors }) => {
           >
             New User
           </button>
+          <button
+            type="button"
+            className="demo-button"
+            onClick={() => hostDemoLogin()}
+            >Demo login</button>
         </div>
       );
     } else {

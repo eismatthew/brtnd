@@ -8,6 +8,7 @@ const BartenderSession = ({
   bartenderSignup,
   clearErrors,
   errors,
+  bartenderDemoLogin
 }) => {
   const [sessionType, setSessionType] = useState("");
   useEffect(() => {
@@ -42,6 +43,11 @@ const BartenderSession = ({
           >
             New User
           </button>
+          <button
+            type="button"
+            className="demo-button"
+            onClick={() => bartenderDemoLogin()}
+          >Demo login</button>
         </div>
       );
     } else {
