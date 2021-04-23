@@ -12,8 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner";
 
-const ActiveOrders = ({ id }) => {
-  const [orderCount, setOrderCount] = useState(0);
+const ActiveOrders = ({ id, setOrderCount }) => {
   const [editMode, setEditMode] = useState(false);
   const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
@@ -37,8 +36,7 @@ const ActiveOrders = ({ id }) => {
     editOrder(order._id, order);
     setEditMode(false);
   };
-  console.log(order);
-
+  
   const handleEditMode = () =>
     !editMode ? setEditMode(true) : setEditMode(false);
 

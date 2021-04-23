@@ -15,7 +15,7 @@ const OrderForm = ({ createOrder }) => {
     orderedBy: orderedBy,
     takenBy: "",
   });
-  console.log(newOrder);
+
   useEffect(() => {
     let config = {
       headers: {
@@ -30,7 +30,6 @@ const OrderForm = ({ createOrder }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const { match, location, history } = props;
     console.log(newOrder);
     createOrder(newOrder);
     setNewOrder({
@@ -42,7 +41,6 @@ const OrderForm = ({ createOrder }) => {
       orderedBy: orderedBy,
       takenBy: "",
     })
-    // props.history.push("/profile")
   };
 
   const handleChange = (e) => {
@@ -56,7 +54,7 @@ const OrderForm = ({ createOrder }) => {
   return (
     <div className="order-form-parent-container">
       <h3 className="logo">brtnd</h3>
-      <div clasName="order-form-space">
+      <div className="order-form-space">
       <div className="order-form-box">
       <div className="order-form-main">
         <div className="order-header">
