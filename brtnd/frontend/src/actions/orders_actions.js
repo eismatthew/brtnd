@@ -26,16 +26,14 @@ export const receiveEditedOrder = (order) => ({
   order,
 });
 
-const receiveOrderErrors = (errors) => ({
-  type: RECEIVE_ORDER_ERRORS,
-  errors,
-});
+// const receiveOrderErrors = (errors) => ({
+//   type: RECEIVE_ORDER_ERRORS,
+//   errors,
+// });
 
-const clearOrderErrors = () => ({
-  type: CLEAR_ORDER_ERRORS,
-});
-
-
+// const clearOrderErrors = () => ({
+//   type: CLEAR_ORDER_ERRORS,
+// });
 
 export const fetchAllOrders = () => (dispatch) =>
   ordersUtil
@@ -79,5 +77,4 @@ export const editOrder = (orderId) => (dispatch) =>
       dispatch(receiveEditedOrder(order)).catch((err) => console.log(err))
     );
 
-
-    export const clearErrors = () => (dispatch) => dispatch(clearOrderErrors());
+// export const clearErrors = () => (dispatch) => dispatch(clearOrderErrors());

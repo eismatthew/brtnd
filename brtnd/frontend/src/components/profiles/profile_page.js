@@ -32,8 +32,6 @@ const ProfilePage = ({ id, logout }) => {
         <HostProfile id={id} currentUser={currentUser} />
       </div>
     );
-
-  console.log(currentUser);
   return (
     <div className="profile-main">
       <button className="logout-button" onClick={() => logout()}>Logout</button>
