@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./bartender_profile.css";
 
-const BartenderProfile = ({ id, currentUser: { firstName } }) => {
+const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
   return (
     <div className="bartender-profile-flex">
     <div className="bartender-profile-main">
       <div className="welcome">
         <div className="profile-top-box">
-          <h1>Welcome, {firstName}</h1>
+          <h1>{greetings[Math.floor(Math.random() * greetings.length)]}, {firstName}</h1>
 
           <div className="find-orders">
             <button className="profile-button">Browse open orders</button>

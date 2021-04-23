@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./order_form.css";
 
-const OrderForm = ({ createOrder, errors }) => {
+const OrderForm = ({ createOrder }) => {
   const [orderedBy, setOrderedBy] = useState(null);
   const [newOrder, setNewOrder] = useState({
     headCount: 0,

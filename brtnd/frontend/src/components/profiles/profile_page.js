@@ -22,20 +22,46 @@ const ProfilePage = ({ id, logout }) => {
           .then((res) => setCurrentUser(res.data));
   }, []);
 
+  const greetings = [
+    "Greetings",
+    "Hi",
+    "Howdy",
+    "Welcome",
+    "Bonjour",
+    "Buenos Dias",
+    "Good Day",
+    "G'Day",
+    "Hi-ya",
+    "Hey",
+    "Shalom",
+    "Howzit",
+    "What's up",
+    "Howdy-do",
+    "What’s new",
+    "It’s good to see you",
+    "Yo!",
+  ];
+
   const profileShow =
     localStorage.bartender !== "false" ? (
       <div>
-        <BartenderProfile id={id} currentUser={currentUser} />
+        <BartenderProfile
+          id={id}
+          currentUser={currentUser}
+          greetings={greetings}
+        />
       </div>
     ) : (
       <div>
-        <HostProfile id={id} currentUser={currentUser} />
+        <HostProfile id={id} currentUser={currentUser} greetings={greetings} />
       </div>
     );
   return (
     <div className="profile-main">
       <h3 className="logo">brtnd</h3>
-      <button className="logout-button" onClick={() => logout()}>Logout</button>
+      <button className="logout-button" onClick={() => logout()}>
+        Logout
+      </button>
       <div>{profileShow}</div>
     </div>
   );

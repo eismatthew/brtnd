@@ -79,6 +79,18 @@ button:hover {
   height: 200px;
   border-radius: 4px;
 }
+.profile-order-box {
+  border: 1px solid #d09a2d;
+  border-radius: 4px;
+  width: 400px;
+  height: 400px;
+  overflow: scroll;
+  font-weight: 300;
+  padding: 10px;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.664);
+  margin-top: 30px;
+}
 
 .order-form-box {
       border: 1px solid #d09a2d;

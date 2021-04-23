@@ -12,6 +12,6 @@ export const getOrderByOrderId = (orderId) =>
 
 export const deleteOrder = (orderId) => axios.delete(`api/orders/${orderId}`);
 
-export const editOrder = (orderId) => axios.patch(`/api/orders/${orderId}`);
+export const editOrder = (orderId, order) => axios.patch(`/api/orders/${orderId}`, order);
 
 export const createOrder = (order) => axios.post("/api/orders/", order);

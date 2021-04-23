@@ -26,10 +26,10 @@ export const receiveEditedOrder = (order) => ({
   order,
 });
 
-const receiveOrderErrors = (errors) => ({
-  type: RECEIVE_ORDER_ERRORS,
-  errors,
-});
+// const receiveOrderErrors = (errors) => ({
+//   type: RECEIVE_ORDER_ERRORS,
+//   errors,
+// });
 
 // const clearOrderErrors = () => ({
 //   type: CLEAR_ORDER_ERRORS,
