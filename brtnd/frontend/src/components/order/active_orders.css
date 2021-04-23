@@ -13,6 +13,7 @@
 .edit-order:hover {
   outline: none;
   border: 1px solid #d09a2d;
+  cursor: pointer;
 }
 
 .edit-order:focus {
@@ -50,15 +51,18 @@
 }
 
 .edit-icon:hover {
-  color: #d09a2d
+  color: #d09a2d;
+  cursor: pointer;
 }
 
 .save-icon:hover {
-  color: #d09a2d
+  color: #d09a2d;
+  cursor: pointer;
 }
 
 .delete-icon:hover {
-  color: #d09a2d
+  color: #d09a2d;
+  cursor: pointer;
 }
 
 .detail-label {
