@@ -1,6 +1,6 @@
 body {
   font-family: lato;
-  background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg");
+  /* background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg"); */
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -13,7 +13,7 @@ body {
 
 .order-form-parent-container {
   font-family: lato;
-  background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg");
+  /* background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg"); */
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -21,6 +21,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  background-color: black;
 }
 
 .order-header {
@@ -138,6 +139,8 @@ input[type=number]
   margin-top: 10px;
   margin-bottom: 10px;
   height: 100px;
+  width: 300px;
+  resize: none;
 }
 
 .order-notes:focus{
