@@ -4,21 +4,30 @@ import Loader from "react-loader-spinner";
 
 const OpenOrders = ({ fetchAllOrders, orders, id }) => {
   const [fetchedOrders, setFetchedOrders] = useState(false);
-  const [orderCount, setOrderCount] = useState(0)
+  const [orderCount, setOrderCount] = useState(0);
   useEffect(() => {
-    fetchAllOrders().then(() => setFetchedOrders(true)).then(()=>setOrderCount(0));
+    fetchAllOrders()
+      .then(() => setFetchedOrders(true))
+      .then(() => setOrderCount(0));
     return () => {
-      setFetchedOrders(false)
+      setFetchedOrders(false);
     };
   }, [orderCount]);
 
-console.log(orderCount)
+  console.log(orderCount);
 
   const render = () => {
     if (fetchedOrders) {
       return orders.map((order, i) => {
         if (!order.takenBy) {
-          return <OrderItem key={i} order={order} id={id} setOrderCount={setOrderCount} />;
+          return (
+            <OrderItem
+              key={i}
+              order={order}
+              id={id}
+              setOrderCount={setOrderCount}
+            />
+          );
         }
       });
     } else {

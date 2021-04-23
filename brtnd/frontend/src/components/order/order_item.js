@@ -5,14 +5,15 @@ import { editOrder } from "../../util/orders_api_util";
 
 const OrderItem = ({
   id,
-  order: { _id, createdAt, headCount, location, notes, price, tier }, setOrderCount
+  order: { _id, createdAt, headCount, location, notes, price, tier },
+  setOrderCount,
 }) => {
   const orderedDate = new Date(createdAt).toLocaleDateString();
 
   const handleTakeOrder = () => {
-    editOrder(_id, { takenBy: id })
-    setOrderCount(1)
-  }
+    editOrder(_id, { takenBy: id });
+    setOrderCount(1);
+  };
 
   return (
     <div>

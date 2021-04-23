@@ -19,19 +19,11 @@ router.get(
 
 router.get(
   "/:user_id",
-  passport.authenticate("user", { session: false }),
+  passport.authenticate(["user", "bartender"], { session: false }),
   (req, res) => {
-    Order.find({ orderedBy: req.params.user_id })
-      .then((orders) => res.json(orders))
-      .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
-  }
-);
-
-router.get(
-  "/:bartender_id",
-  passport.authenticate("bartender", { session: false }),
-  (req, res) => {
-    Order.find({ takenBy: req.params.bartender_id })
+    Order.find({
+      $or: [{ orderedBy: req.params.user_id }, { takenBy: req.params.user_id }],
+    })
       .then((orders) => res.json(orders))
       .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
   }

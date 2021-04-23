@@ -18,7 +18,7 @@ const ProfilePage = ({ id, logout }) => {
           .get("/api/bartenders/current", config)
           .then((res) => setCurrentUser(res.data))
       : axios
-          .get("/api/users/current", config)
+          .get("/api/users/current/user", config)
           .then((res) => setCurrentUser(res.data));
   }, []);
 

@@ -7,14 +7,19 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [orderCount, setOrderCount] = useState(0);
   const [disabled, setDisabled] = useState(false);
   const [orderButtonText, setOrderButtonText] = useState("Start an order");
-
+  const [greeting, setGreeting] = useState("");
+  const [order, setOrder] = useState({});
   useEffect(() => {
-    orderCount > 0 ? setDisabled(true) : setDisabled(false);
     orderCount > 0
       ? setOrderButtonText("Active Order Below")
       : setOrderButtonText("Start an order");
+      order !== undefined ? setDisabled(true) : setDisabled(false)
     return () => {};
-  }, [orderCount]);
+  }, [order]);
+
+  useEffect(() => {
+    setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
+  }, []);
 
   return (
     <div className="host-profile-flex">
@@ -22,8 +27,7 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
         <div className="welcome">
           <div className="profile-top-box">
             <h1>
-              {greetings[Math.floor(Math.random() * greetings.length)]},{" "}
-              {firstName}
+              {greeting}, {firstName}
             </h1>
             <div className="start-order">
               <Link to="/order-form">
@@ -37,7 +41,13 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
             <h3>Your order</h3>
             <div className="bartender-order-box">
               <p>Active order</p>
-              <ActiveOrders id={id} setOrderCount={setOrderCount} />
+              <ActiveOrders
+                id={id}
+                setOrderCount={setOrderCount}
+                setDisabled={setDisabled}
+                order={order}
+                setOrder={setOrder}
+              />
             </div>
           </div>
         </div>

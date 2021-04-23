@@ -4,7 +4,6 @@ import ActiveGigs from "../order/active_gigs";
 import "./bartender_profile.css";
 
 const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
-  console.log(id);
   return (
     <div className="bartender-profile-flex">
       <div className="bartender-profile-main">

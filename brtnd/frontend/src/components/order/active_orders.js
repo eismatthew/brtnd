@@ -13,9 +13,8 @@ import {
 import Loader from "react-loader-spinner";
 import "./active_orders.css";
 
-const ActiveOrders = ({ id, setOrderCount }) => {
+const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   const [editMode, setEditMode] = useState(false);
-  const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

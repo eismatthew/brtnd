@@ -8,9 +8,24 @@ const passport = require("passport");
 
 const validateSignupInput = require("../../validation/signup");
 const validateLoginInput = require("../../validation/login");
+const Order = require("../../models/Order");
 
 router.get(
-  "/current",
+  "/:id",
+  passport.authenticate("bartender", { session: false }),
+  (req, res) => {
+    User.findById(req.params.id)
+      .then((user) =>
+        res
+          .status(200)
+          .json({ firstName: user.firstName, lastName: user.lastName })
+      )
+      .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
+  }
+);
+
+router.get(
+  "/current/user",
   passport.authenticate("user", { session: false }),
   (req, res) => {
     res.json({
