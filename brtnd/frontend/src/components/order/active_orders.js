@@ -37,7 +37,7 @@ const ActiveOrders = ({ id, setOrderCount }) => {
     editOrder(order._id, order);
     setEditMode(false);
   };
-  
+
   const handleEditMode = () =>
     !editMode ? setEditMode(true) : setEditMode(false);
 
@@ -58,13 +58,28 @@ const ActiveOrders = ({ id, setOrderCount }) => {
     if (!editMode && !loading && order !== undefined) {
       return (
         <div className="order-display">
-          <div className="order-display-detail"><span className="detail-label">Head count: </span>{order.headCount}</div>
-          <div className="order-display-detail"><span className="detail-label">Location: </span> {order.location}</div>
-          <div className="order-display-detail"><span className="detail-label">Drink tier: </span> {order.tier}</div>
-          <div className="order-display-detail"><span className="detail-label">Notes: </span> {order.notes}</div>
-          <div className="order-display-detail"><span className="detail-label">Price: </span> ${order.price}</div>
+          <div className="order-display-detail">
+            <span className="detail-label">Head count: </span>
+            {order.headCount}
+          </div>
+          <div className="order-display-detail">
+            <span className="detail-label">Location: </span> {order.location}
+          </div>
+          <div className="order-display-detail">
+            <span className="detail-label">Drink tier: </span> {order.tier}
+          </div>
+          <div className="order-display-detail">
+            <span className="detail-label">Notes: </span> {order.notes}
+          </div>
+          <div className="order-display-detail">
+            <span className="detail-label">Price: </span> ${order.price}
+          </div>
           <div className="order-display-detail">{order.takenBy}</div>
-          <FontAwesomeIcon icon={faEllipsisH} className="edit-icon" onClick={handleEditMode} />
+          <FontAwesomeIcon
+            icon={faEllipsisH}
+            className="edit-icon"
+            onClick={handleEditMode}
+          />
         </div>
       );
     } else if (order === undefined) {
@@ -109,8 +124,16 @@ const ActiveOrders = ({ id, setOrderCount }) => {
             className="delete-icon"
             onClick={handleDeleteOrder}
           />
-          <FontAwesomeIcon icon={faSave} className="save-icon" onClick={handleOrderPatch} />
-          <FontAwesomeIcon icon={faEllipsisH} className="edit-icon" onClick={handleEditMode} />
+          <FontAwesomeIcon
+            icon={faSave}
+            className="save-icon"
+            onClick={handleOrderPatch}
+          />
+          <FontAwesomeIcon
+            icon={faEllipsisH}
+            className="edit-icon"
+            onClick={handleEditMode}
+          />
         </div>
       );
     }

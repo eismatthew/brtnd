@@ -38,9 +38,8 @@ export const receiveEditedOrder = (order) => ({
 export const fetchAllOrders = () => (dispatch) =>
   ordersUtil
     .getAllOrders()
-    .then((orders) =>
-      dispatch(receiveOrders(orders)).catch((err) => console.log(err))
-    );
+    .then((orders) => dispatch(receiveOrders(orders)))
+    .catch((err) => console.log(err));
 
 export const fetchUserOrder = (userId) => (dispatch) =>
   ordersUtil

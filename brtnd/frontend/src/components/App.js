@@ -7,6 +7,7 @@ import HostSessionContainer from "../components/session/host_session/host_sessio
 import BartenderSessionContainer from "../components/session/bartender_session/bartender_session_container";
 import ProfileContainer from "../components/profiles/profile_container";
 import OrderFormContainer from "./order/order_form_container";
+import OpenOrdersContainer from "./order/open_orders_container";
 
 import "./App.css";
 
@@ -19,6 +20,11 @@ const App = () => {
           exact
           path="/order-form"
           component={OrderFormContainer}
+        />
+        <ProtectedRoute
+          exact
+          path="/open-orders"
+          component={OpenOrdersContainer}
         />
         <AuthRoute
           exact

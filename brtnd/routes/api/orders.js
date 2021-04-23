@@ -59,10 +59,10 @@ router.delete(
 
 router.patch(
   "/:id",
-  passport.authenticate("user", { session: false }),
+  passport.authenticate(["user", "bartender"], { session: false }),
   (req, res) => {
-    console.log(req.params)
-    console.log(req.body)
+    console.log(req.params);
+    console.log(req.body);
     Order.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
