@@ -34,6 +34,7 @@ const ProfilePage = ({ id, logout }) => {
     );
   return (
     <div className="profile-main">
+      <h3 className="logo">brtnd</h3>
       <button className="logout-button" onClick={() => logout()}>Logout</button>
       <div>{profileShow}</div>
     </div>

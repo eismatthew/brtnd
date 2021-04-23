@@ -81,6 +81,14 @@ color: white;
   background-color: #d09a2d;
 }
 
+.logo {
+  color: #d09a2d;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-weight: 300;
+}
+
 .profile-top-box {
     border: 1px solid #d09a2d;
     border-radius: 4px;

@@ -23,6 +23,14 @@
   width: 200px;
 }
 
+.logo {
+  color: #d09a2d;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-weight: 300;
+}
+
 .profile-button:hover {
   color: white;
   border: 1px solid #d09a2d;
