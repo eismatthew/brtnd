@@ -11,7 +11,7 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
   useEffect(() => {
     orderCount > 0 ? setDisabled(true) : setDisabled(false);
     orderCount > 0
-      ? setOrderButtonText("Active Order")
+      ? setOrderButtonText("Active Order Below")
       : setOrderButtonText("Start an order");
     return () => {};
   }, [orderCount]);

@@ -58,12 +58,12 @@ const ActiveOrders = ({ id, setOrderCount }) => {
     if (!editMode && !loading && order !== undefined) {
       return (
         <div className="order-display">
-          <div>{order.headCount}</div>
-          <div>{order.location}</div>
-          <div>{order.tier}</div>
-          <div>{order.notes}</div>
-          <div>{order.price}</div>
-          <div>{order.takenBy}</div>
+          <div className="order-display-detail"><span className="detail-label">Head count: </span>{order.headCount}</div>
+          <div className="order-display-detail"><span className="detail-label">Location: </span> {order.location}</div>
+          <div className="order-display-detail"><span className="detail-label">Drink tier: </span> {order.tier}</div>
+          <div className="order-display-detail"><span className="detail-label">Notes: </span> {order.notes}</div>
+          <div className="order-display-detail"><span className="detail-label">Price: </span> ${order.price}</div>
+          <div className="order-display-detail">{order.takenBy}</div>
           <FontAwesomeIcon icon={faEllipsisH} className="edit-icon" onClick={handleEditMode} />
         </div>
       );

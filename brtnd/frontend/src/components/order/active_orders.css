@@ -22,8 +22,17 @@
 
 .order-display {
     font-size: 18px;
+    border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 300px;
+    padding: 10px;
+    transition: .15s ease;
 }
 
+.order-display:hover {
+  background: rgba(0, 0, 0, 0.799);
+  border: 1px solid white;
+}
 .delete-icon {
   font-size: 18px;
   margin-right: 10px;
@@ -49,5 +58,9 @@
 }
 
 .delete-icon:hover {
+  color: #d09a2d
+}
+
+.detail-label {
   color: #d09a2d
 }

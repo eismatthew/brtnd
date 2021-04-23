@@ -84,6 +84,11 @@ input[type=number]
   border: 1px solid #d09a2d;
 }
 
+.quantity input:hover {
+  outline: 0;
+  border: 1px solid #d09a2d;
+}
+
 
 .select {
   font-size: 22px;
@@ -93,6 +98,7 @@ input[type=number]
 
 .radio-tier {
   padding-top: 0px;
+  margin-bottom: 6px;
 }
 
 .radio-tier  input[type="radio"] {
@@ -143,6 +149,11 @@ input[type=number]
     border: 1px solid #d09a2d;
 }
 
+.location:hover{
+    outline: none;
+    border: 1px solid #d09a2d;
+}
+
 .order-notes {
   color: white;
   background-color: transparent;
@@ -160,6 +171,11 @@ input[type=number]
 }
 
 .order-notes:focus{
+    outline: none;
+    border: 1px solid #d09a2d;
+}
+
+.order-notes:hover{
     outline: none;
     border: 1px solid #d09a2d;
 }
