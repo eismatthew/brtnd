@@ -1,0 +1,171 @@
+body {
+  font-family: lato;
+  background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+
+.order-form-parent-container {
+  font-family: lato;
+  background-image: url("images/connor-home-DrYUAEXsNyE-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.order-header {
+  color: #d09a2d;
+  font-size: 20px;
+  padding-top: 60px;
+  padding-left: 40px;
+}
+
+.order-form {
+  padding-left: 40px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity {
+  padding-top: 20px;
+}
+.quantity input {
+  width: 45px;
+  height: 42px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  text-align: left;
+  color: white;
+  background: transparent;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+
+.select {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.radio-tier {
+  padding-top: 20px;
+}
+
+.radio-tier  input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-tier label {
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-family: lato;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 4px;
+    transition: .15s ease;
+    margin-right: 6px;
+}
+
+.radio-tier input[type="radio"]:checked + label {
+  background-color: white;
+  color: black;
+}
+
+.radio-tier  label:hover {
+  background-color: white;
+  color: #d09a2d;
+  cursor: pointer;
+}
+
+.location {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.location:focus{
+    outline: none;
+}
+
+.order-notes {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+.order-notes:focus{
+    outline: none;
+}
+
+textarea {
+  font-family: lato;
+  width: 300px;
+}
+
+.sub {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+}
+
+.sub:hover {
+  color: white;
+  border: 2px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+
+
