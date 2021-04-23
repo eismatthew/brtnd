@@ -15,14 +15,14 @@ const OrderItem = ({
   }
 
   return (
-    <div>
-      <div>{orderedDate}</div>
-      <div>{headCount}</div>
-      <div>{location}</div>
-      <div>{tier}</div>
-      <div>{notes}</div>
-      <div>{price}</div>
-      <FontAwesomeIcon icon={faUserCheck} onClick={handleTakeOrder} />
+    <div className="order-item-box">
+      <div className="order-display-detail"><span className="detail-label">Date: </span>{orderedDate}</div>
+      <div className="order-display-detail"><span className="detail-label">Head count: </span>{headCount}</div>
+      <div className="order-display-detail"><span className="detail-label">Location: </span>{location}</div>
+      <div className="order-display-detail"><span className="detail-label">Drink tier: </span>{tier}</div>
+      <div className="order-display-detail"><span className="detail-label">Notes: </span>{notes}</div>
+      <div className="order-display-detail"><span className="detail-label">Pay: </span>${price}</div>
+      <FontAwesomeIcon className="accept-order" icon={faUserCheck} onClick={handleTakeOrder} />
     </div>
   );
 };
