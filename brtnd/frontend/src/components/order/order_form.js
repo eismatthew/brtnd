@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import {Link, Redirect, useHistory} from "react-router-dom";
 import "./order_form.css";
+import { withRouter} from 'react-router'
 
 const OrderForm = ({ createOrder }) => {
   const [orderedBy, setOrderedBy] = useState(null);
@@ -29,6 +30,7 @@ const OrderForm = ({ createOrder }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const { match, location, history } = props;
     console.log(newOrder);
     createOrder(newOrder);
     setNewOrder({
@@ -39,7 +41,8 @@ const OrderForm = ({ createOrder }) => {
       price: 0,
       orderedBy: orderedBy,
       takenBy: "",
-    });
+    })
+    // props.history.push("/profile")
   };
 
   const handleChange = (e) => {
@@ -52,12 +55,15 @@ const OrderForm = ({ createOrder }) => {
 
   return (
     <div className="order-form-parent-container">
+      <h3 className="logo">brtnd</h3>
+      <div clasName="order-form-space">
+      <div className="order-form-box">
       <div className="order-form-main">
         <div className="order-header">
           <h1>Order a bartender</h1>
         </div>
 
-        <form className="order-form" onSubmit={handleSubmit}>
+        <form className="order-form" onSubmit={handleSubmit} >
           <div className="order-form-headcount">
             <label className="select">Select your headcount</label>
             <div className="quantity">
@@ -125,6 +131,9 @@ const OrderForm = ({ createOrder }) => {
           />
           <input className="sub" type="submit" value="Place Order" />
         </form>
+      </div>
+          <Link to="/profile"><button className="to-profile">Back to profile</button></Link>
+      </div>
       </div>
     </div>
   );

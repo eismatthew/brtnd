@@ -92,8 +92,12 @@ button:hover {
   margin-top: 30px;
 }
 
+.active-header {
+  color: yellow;
+}
+
 .order-form-box {
-      border: 1px solid #d09a2d;
+    border: 1px solid #d09a2d;
     border-radius: 4px;
     width: 450px;
     max-height: 578px;
