@@ -26,7 +26,9 @@
 }
 
 .open-orders-box::-webkit-scrollbar {
+  width: 0;
   display: none;
+  background: transparent;
 }
 
 .open-orders-box:hover {
