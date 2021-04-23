@@ -35,8 +35,8 @@ const ProfilePage = ({ id, logout }) => {
 
   console.log(currentUser);
   return (
-    <div>
-      <div onClick={() => logout()}>Logout</div>
+    <div className="profile-main">
+      <button className="logout-button" onClick={() => logout()}>Logout</button>
       <div>{profileShow}</div>
     </div>
   );

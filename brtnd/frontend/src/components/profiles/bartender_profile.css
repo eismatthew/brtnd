@@ -1,6 +1,6 @@
-.bartender-profile-main {
+.profile-main {
   font-family: lato;
-  background-image: url("../../images/cater-yang-1a_u4n02YNo-unsplash.jpg");
+  background-image: url("../../images/q-u-i-S6atLH5Rf0U-unsplash.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -18,36 +18,111 @@ h3 {
 
 .welcome {
   color: white;
-  padding-top: 60px;
+  padding-top: 90px;
   padding-left: 40px;
+
 }
 
-h1 {
+.welcome h1 {
   font-weight: 300;
 }
 
-button {
+.logout-button{
   color: white;
   background-color: transparent;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
-  margin-right: 10px;
+  font-weight: 300;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   transition: .15s ease;
   margin-bottom: 20px;
+  width: 120px;
 }
 
-button:hover {
+.bartender-profile-flex {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
   color: white;
-  border: 2px solid #d09a2d;
+  border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
 
 .bartender-order-box {
-  background:rgba(0, 0, 0, 0.425);
+color: white;
+}
+
+.profile-button{
+  color: white;
+  background-color: transparent;
   border: 1px solid white;
-  width: 300px;
-  height: 200px;
   border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: 300;
+  transition: .15s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.profile-button:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.profile-top-box {
+    border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 400px;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+.profile-order-box {
+    border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 400px;
+    height: 400px;
+    overflow: scroll;
+    font-weight: 300;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+    margin-top: 30px;
+}
+
+.profile-order-box h3 {
+  font-weight: 300;
+}
+
+.review-box {
+      border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 450px;
+    max-height: 578px;
+    min-height: 578px;
+    overflow: scroll;
+    font-weight: 300;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+    margin-top: 90px;
+    margin-left: 80px;
+}
+
+.review-box h3 {
+  color: white;
+  font-weight: 300;
 }

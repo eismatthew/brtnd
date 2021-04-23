@@ -9,6 +9,26 @@
   background-size: cover;
 }
 
+.profile-button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: 300;
+  transition: .15s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.profile-button:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
 h3 {
   padding: 0;
   margin-top: 0;
@@ -50,4 +70,24 @@ button:hover {
   width: 300px;
   height: 200px;
   border-radius: 4px;
+}
+
+.order-form-box {
+      border: 1px solid #d09a2d;
+    border-radius: 4px;
+    width: 450px;
+    max-height: 578px;
+    min-height: 578px;
+    overflow: scroll;
+    font-weight: 300;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+    margin-top: 90px;
+    margin-left: 80px;
+}
+
+.order-form-box h3 {
+  color: white;
+  font-weight: 300;
 }
