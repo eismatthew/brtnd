@@ -6,7 +6,7 @@ const Order = require("../../models/Order");
 
 router.get(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("bartender", { session: false }),
   (req, res) => {
     Order.find({})
       .sort({ date: -1 })
@@ -19,7 +19,7 @@ router.get(
 
 router.get(
   "/:user_id",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("user", { session: false }),
   (req, res) => {
     Order.find({ orderedBy: req.params.user_id })
       .then((orders) => res.json(orders))
@@ -29,7 +29,7 @@ router.get(
 
 router.get(
   "/:bartender_id",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("bartender", { session: false }),
   (req, res) => {
     Order.find({ takenBy: req.params.bartender_id })
       .then((orders) => res.json(orders))
@@ -47,7 +47,7 @@ router.get("/:id", (req, res) => {
 
 router.delete(
   "/:id",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("user", { session: false }),
   (req, res) => {
     Order.findByIdAndDelete(req.params.id)
       .then((order) => res.json(order))
@@ -59,7 +59,7 @@ router.delete(
 
 router.patch(
   "/:id",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("user", { session: false }),
   (req, res) => {
     Order.findByIdAndUpdate(
       req.params.id,
@@ -78,7 +78,7 @@ router.patch(
 
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("user", { session: false }),
   (req, res) => {
     let theOrder;
 

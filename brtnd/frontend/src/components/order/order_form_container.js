@@ -1,9 +1,6 @@
 import { connect } from "react-redux";
 import OrderForm from "./order_form";
-import {
-  createOrder,
-  editOrder,
-} from "../../actions/orders_actions";
+import { createOrder } from "../../actions/orders_actions";
 
 const mSTP = ({ errors }) => ({ errors });
 

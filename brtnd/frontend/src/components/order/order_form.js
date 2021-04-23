@@ -1,23 +1,35 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import "./order_form.css";
 
-const OrderForm = ({ createOrder }) => {
+const OrderForm = ({ createOrder, errors }) => {
+  const [orderedBy, setOrderedBy] = useState(null);
   const [newOrder, setNewOrder] = useState({
     headCount: 0,
     tier: "",
     location: "",
     notes: "",
     price: 0,
-    orderedBy: "",
+    orderedBy: orderedBy,
     takenBy: "",
   });
-
-  useEffect(()=>{
-
-  },[newOrder])
+  console.log(newOrder);
+  useEffect(() => {
+    let config = {
+      headers: {
+        Authorization: localStorage.jwtToken,
+      },
+    };
+    axios
+      .get("/api/users/current", config)
+      .then((res) => setOrderedBy(res.data.id))
+      .then(() => setNewOrder((order) => ({ ...order, orderedBy: orderedBy })));
+  }, [orderedBy]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(newOrder);
     createOrder(newOrder);
     setNewOrder({
       headCount: "",
@@ -25,12 +37,11 @@ const OrderForm = ({ createOrder }) => {
       location: "",
       notes: "",
       price: 0,
-      orderedBy: "",
+      orderedBy: orderedBy,
       takenBy: "",
     });
   };
 
-  console.log(newOrder)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewOrder((order) => ({
@@ -112,11 +123,7 @@ const OrderForm = ({ createOrder }) => {
             value={newOrder.notes}
             onChange={handleChange}
           />
-          <input
-            className="sub"
-            type="submit"
-            value="Place Order"
-          />
+          <input className="sub" type="submit" value="Place Order" />
         </form>
       </div>
     </div>
