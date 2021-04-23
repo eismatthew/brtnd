@@ -25,6 +25,10 @@
     top: 40px;
 }
 
+.open-orders-box::-webkit-scrollbar {
+  display: none;
+}
+
 .open-orders-box:hover {
       border: 1px solid white;
       background-color: rgba(0, 0, 0, 0.764);
