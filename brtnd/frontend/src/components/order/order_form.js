@@ -123,7 +123,7 @@ const OrderForm = ({ createOrder }) => {
             cols="50"
             id="notes"
             name="notes"
-            placeholder="Any notes?"
+            placeholder="Any notes? Include date"
             value={newOrder.notes}
             onChange={handleChange}
           />

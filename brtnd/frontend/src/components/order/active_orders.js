@@ -50,7 +50,7 @@ const ActiveOrders = ({ id, setOrderCount }) => {
     if (loading && order !== undefined) {
       return (
         <div>
-          <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+          <Loader type="TailSpin" color="#d09a2d" height={80} width={80} />
         </div>
       );
     }
