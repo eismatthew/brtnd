@@ -13,15 +13,22 @@ const ActiveGigs = ({ id }) => {
   const [loading, setLoading] = useState(true);
   const [orderedBy, setOrderedBy] = useState({});
 
-  console.log(orderedBy);
   useEffect(() => {
     getOrderByBartenderId(id)
       .then((order) => setOrder(order.data[0]))
-      .then(
-        userLookupById(order.orderedBy).then((user) => setOrderedBy(user.data))
+      .then(() =>
+        userLookupById(order.orderedBy)
+          .then((user) => setOrderedBy(user.data))
+          .catch(() => setOrderedBy({ firstName: "", lastName: "" }))
       )
       .then(() => setLoading(false));
   }, [loading]);
+
+  useEffect(() => {
+    return () => {
+      setLoading(true);
+    };
+  }, []);
 
   const handleEditMode = () =>
     !editMode ? setEditMode(true) : setEditMode(false);
@@ -32,7 +39,7 @@ const ActiveGigs = ({ id }) => {
   };
 
   const render = () => {
-    if (loading && order !== undefined) {
+    if (loading && order !== []) {
       return (
         <div>
           <Loader type="TailSpin" color="#d09a2d" height={80} width={80} />
@@ -40,7 +47,7 @@ const ActiveGigs = ({ id }) => {
       );
     }
 
-    if (!editMode && !loading && order !== undefined) {
+    if (!editMode && !loading && order !== []) {
       return (
         <div className="order-display">
           <OrderBoxItem order={order} orderedBy={orderedBy} />
@@ -51,7 +58,7 @@ const ActiveGigs = ({ id }) => {
           />
         </div>
       );
-    } else if (order === undefined) {
+    } else if (order === []) {
       return <div>No Orders</div>;
     } else {
       return (

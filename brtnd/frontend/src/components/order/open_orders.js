@@ -16,8 +16,6 @@ const OpenOrders = ({ fetchAllOrders, orders, id }) => {
     };
   }, [orderCount]);
 
-  console.log(orderCount);
-
   const render = () => {
     if (fetchedOrders) {
       return orders.map((order, i) => {
