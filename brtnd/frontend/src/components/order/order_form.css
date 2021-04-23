@@ -181,6 +181,7 @@ textarea {
   margin-right: 10px;
   font-weight: 300;
   transition: .15s ease;
+    width: 120px;
 }
 
 .sub:hover {
@@ -205,6 +206,7 @@ textarea {
   margin-left: 20px;
   font-weight: 300;
   transition: .15s ease;
+  width: 120px;
 }
 
 .to-profile:hover {

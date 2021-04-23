@@ -1,0 +1,53 @@
+.edit-order {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  font-size: 18px;
+  transition: 0.15s ease;
+}
+
+.edit-order:hover {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+.edit-order:focus {
+  outline: none;
+  border: 1px solid #d09a2d;
+}
+
+.order-display {
+    font-size: 18px;
+}
+
+.delete-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  transition: 0.15s ease;
+}
+
+.save-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.15s ease;  
+}
+.edit-icon {
+  font-size: 18px;
+  transition: 0.15s ease;
+}
+
+.edit-icon:hover {
+  color: #d09a2d
+}
+
+.save-icon:hover {
+  color: #d09a2d
+}
+
+.delete-icon:hover {
+  color: #d09a2d
+}
