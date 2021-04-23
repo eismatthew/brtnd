@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import './host-profile.css';
+import "./host_profile";
 
-const HostProfile = ({ }) => {
-
+const HostProfile = ({ id, currentUser: { firstName } }) => {
   return (
     <div className="host-profile-main">
       <div className="welcome">
-        <h1>Welcome, name</h1>
+        <h1>Welcome, {firstName}</h1>
         <div className="find-orders">
           <button>Start an order</button>
         </div>
@@ -16,9 +15,7 @@ const HostProfile = ({ }) => {
         </div>
       </div>
     </div>
-
-  )
-
-}
+  );
+};
 
 export default HostProfile;

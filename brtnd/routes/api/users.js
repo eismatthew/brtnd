@@ -18,12 +18,12 @@ router.get(
       firstName: req.user.firstName,
       lastName: req.user.lastName,
       email: req.user.email,
+      balance: req.user.balance,
     });
   }
 );
 
 router.post("/signup", (req, res) => {
-  // console.log(req.body)
   const { errors, isValid } = validateSignupInput(req.body);
 
   if (!isValid) {

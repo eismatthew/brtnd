@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="app-main">
       <Switch>
-        <AuthRoute path="/profile" component={ProfileContainer} />
+        <ProtectedRoute path="/profile" component={ProfileContainer} />
         <AuthRoute exact path="/host-session" component={HostSessionContainer} />
         <AuthRoute exact path="/bartender-session" component={BartenderSessionContainer} />
         <AuthRoute exact path="/" component={Splash} />

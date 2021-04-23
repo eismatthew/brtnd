@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import './bartender-profile.css';
+import "./bartender_profile.css";
 
-const BartenderProfile = ({}) => {
-
+const BartenderProfile = ({ id, currentUser: { firstName } }) => {
   return (
     <div className="bartender-profile-main">
       <div className="welcome">
-        <h1>Welcome, name</h1>
+        <h1>Welcome, {firstName}</h1>
 
         <div className="find-orders">
           <button>Browse open orders</button>
@@ -17,9 +16,7 @@ const BartenderProfile = ({}) => {
         </div>
       </div>
     </div>
-
-  )
-
-}
+  );
+};
 
 export default BartenderProfile;

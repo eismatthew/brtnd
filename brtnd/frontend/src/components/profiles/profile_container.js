@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import ProfilePage from "./profile_page";
+import { logout } from "../../actions/session_actions";
 
 const mSTP = ({
   session: {
@@ -7,6 +8,8 @@ const mSTP = ({
   },
 }) => ({ id });
 
-const mDTP = (dispatch) => ({});
+const mDTP = (dispatch) => ({
+  logout: () => dispatch(logout()),
+});
 
 export default connect(mSTP, mDTP)(ProfilePage);
