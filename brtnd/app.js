@@ -6,7 +6,6 @@ const orders = require("./routes/api/orders");
 const userReviews = require("./routes/api/userReviews");
 const bartenderReviews = require("./routes/api/bartenderReviews");
 const passport = require("passport");
-const path = require('path');
 
 const app = express();
 const db = require("./config/keys").mondoURI;
