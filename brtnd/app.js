@@ -6,6 +6,7 @@ const orders = require("./routes/api/orders");
 const userReviews = require("./routes/api/userReviews");
 const bartenderReviews = require("./routes/api/bartenderReviews");
 const passport = require("passport");
+const path = require('path');
 
 const app = express();
 const db = require("./config/keys").mondoURI;
@@ -37,6 +38,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const port = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
