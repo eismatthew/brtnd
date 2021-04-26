@@ -45,15 +45,3 @@ module.exports = (passport) => {
     );
   }
 };
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
->>>>>>> ace76a252157b6b2aeda2e0cf5f7f2b4f34806fb

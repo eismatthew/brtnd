@@ -1,17 +1,20 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCheck } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
-const ReviewItem = ({
-  id,
-  review: { _id, reviwer, reviewee, rating, comments },
-}) => {
+const ReviewItem = ({ review: { reviewer, rating, comments } }) => {
+  const [reviewedBy, setReviewedBy] = useState({});
 
+  useEffect(() => {
+    axios.get(`/api/users/${reviewer}`).then((res) => setReviewedBy(res.data));
+
+    return () => {};
+  }, []);
+  console.log(reviewedBy);
   return (
     <div className="review-item-box">
       <div className="review-display-detail">
-        <span className="detail-label">Bartender: </span>
-        {reviewee}
+        <span className="detail-label">Reviewed By: </span>
+        {`${reviewedBy.firstName} ${reviewedBy.lastName}`}
       </div>
       <div className="review-display-detail">
         <span className="detail-label">Rating: </span>
@@ -20,10 +23,6 @@ const ReviewItem = ({
       <div className="review-display-detail">
         <span className="detail-label">Location: </span>
         {comments}
-      </div>
-      <div className="review-display-detail">
-        <span className="detail-label">Reviewed by: </span>
-        {reviewee}
       </div>
     </div>
   );

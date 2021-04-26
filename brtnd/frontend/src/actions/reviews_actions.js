@@ -72,7 +72,7 @@ export const fetchUserReviews = (userId) => (dispatch) =>
   reviewsUtil
     .getUserReviews(userId)
     .then((reviews) =>
-      dispatch(receiveReviews(reviews)).catch((err) => console.log(err))
+      dispatch(receiveReviews(reviews))).catch((err) => console.log(err)
     );
 
 export const fetchUserReview = (reviewId) => (dispatch) =>
