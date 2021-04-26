@@ -21,7 +21,7 @@ router.get(
   "/:bartender_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    BartenderReview.find({ reviewer: req.body.reviewer })
+    BartenderReview.find({ reviewer: req.body.id })
       .then((bartenderReviews) => res.json(bartenderReviews))
       .catch((err) =>
         res.status(404).json({ noReviewsFound: "No reviews found." })
@@ -43,7 +43,7 @@ router.get(
 
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate(["user", "bartender"], { session: false }),
   (req, res) => {
     BartenderReview.find({ order: req.body.order }, function (err, results) {
       if (err) {

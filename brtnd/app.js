@@ -8,7 +8,7 @@ const bartenderReviews = require("./routes/api/bartenderReviews");
 const passport = require("passport");
 
 const app = express();
-const db = require("./config/keys").mondoURI;
+const db = require("./config/keys").mongoURI;
 
 //BODY PARSER IS DEPRECATED
 // app.use(bodyParser.urlencoded({ extended: false }));

@@ -4,7 +4,6 @@ const OrderBoxItem = ({
   order: { headCount, location, tier, notes, price },
   orderedBy: { firstName, lastName },
 }) => {
-  console.log(firstName);
   if (!firstName || firstName === undefined || !headCount) {
     return <div>No Orders</div>;
   } else {

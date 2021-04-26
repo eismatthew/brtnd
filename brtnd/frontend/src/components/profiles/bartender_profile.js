@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ActiveGigs from "../order/active_gigs";
+import ReviewsContainer from "../reviews/reviews_container";
 import "./bartender_profile.css";
 
 const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
@@ -30,6 +31,7 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
       </div>
       <div className="review-box">
         <h3>Your reviews</h3>
+        <ReviewsContainer />
       </div>
     </div>
   );

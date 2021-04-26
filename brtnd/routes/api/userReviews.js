@@ -18,10 +18,10 @@ router.get(
 );
 
 router.get(
-  "/:user_id",
-  passport.authenticate("jwt", { session: false }),
+  "/:id",
+  passport.authenticate("bartender", { session: false }),
   (req, res) => {
-    UserReview.find({ reviewer: req.body.reviewer })
+    UserReview.find({ reviewee: req.params.id })
       .then((userReviews) => res.json(userReviews))
       .catch((err) =>
         res.status(404).json({ noReviewsFound: "No reviews found." })
@@ -29,21 +29,21 @@ router.get(
   }
 );
 
-router.get(
-  "/:id",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    UserReview.findById(req.params.id)
-      .then((userReview) => res.json(userReview))
-      .catch((err) =>
-        res.status(404).json({ noReviewsFound: "No review found with that ID" })
-      );
-  }
-);
+// router.get(
+//   "/:id",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     UserReview.findById(req.params.id)
+//       .then((userReview) => res.json(userReview))
+//       .catch((err) =>
+//         res.status(404).json({ noReviewsFound: "No review found with that ID" })
+//       );
+//   }
+// );
 
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("user", { session: false }),
   (req, res) => {
     UserReview.find({ order: req.body.order }, function (err, results) {
       if (err) {
