@@ -2,6 +2,8 @@
 # brtnd
 brtnd is an app that connects hosts to bartenders and bartender to hosts. If you have an event, you have a bartender. If you have drinks, you have a gig.
 
+[Live](https://brtndapp.herokuapp.com/#/)
+
 ## Technologies Used
   *  MongoDB
   *  Express.js
