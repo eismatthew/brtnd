@@ -3,7 +3,6 @@ import React from "react";
 const OrderBoxItem = ({
   order: { headCount, location, tier, notes, price },
   orderedBy: { firstName, lastName },
-  handleEditMode,
 }) => {
   console.log(firstName);
   if (!firstName || firstName === undefined || !headCount) {

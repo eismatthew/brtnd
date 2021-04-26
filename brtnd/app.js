@@ -6,7 +6,6 @@ const orders = require("./routes/api/orders");
 const userReviews = require("./routes/api/userReviews");
 const bartenderReviews = require("./routes/api/bartenderReviews");
 const passport = require("passport");
-const path = require('path');
 
 const app = express();
 const db = require("./config/keys").mondoURI;
@@ -28,6 +27,14 @@ app.use("/api/bartenders", bartenders);
 app.use("/api/orders", orders);
 app.use("/api/user-reviews", userReviews);
 app.use("/api/bartender-reviews", bartenderReviews);
+
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 
 const port = process.env.PORT || 5000;
 

@@ -21,5 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+
+keys_dev
+
+
+>>>>>>> ace76a252157b6b2aeda2e0cf5f7f2b4f34806fb
 node_modules
 frontend/node_modules
