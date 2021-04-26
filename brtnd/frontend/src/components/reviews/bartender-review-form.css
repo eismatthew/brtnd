@@ -1,0 +1,150 @@
+.review-main {
+  font-family: lato;
+  background-image: url("../../images/q-u-i-S6atLH5Rf0U-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.review-container {
+  border: 1px solid #d09a2d;
+  width: 390px;
+  border-radius: 4px;
+  transition: .15s ease;
+  font-family: lato;
+  background-color: rgba(0, 0, 0, 0.593);
+  position: fixed;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  top: 90px;
+  left: 60px;
+}
+
+.review-container:hover {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.699);
+}
+
+.review {
+  padding-left: 40px;
+}
+
+.review .rating {
+  color: white;
+}
+
+.radio-box  input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-box  label {
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-family: lato;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: .15s ease;
+    margin-right: 10px;
+}
+
+.radio-box  input[type="radio"]:checked + label {
+  background-color: white;
+  color: black;
+}
+
+.radio-box label:hover {
+  background-color: white;
+  color: #d09a2d;
+  cursor: pointer;
+}
+
+.rating-header {
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+
+.sub {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: lato;
+  padding: 10px;
+  width: 120px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+}
+
+.sub:hover {
+  color: white;
+  border: 1px solid #d09a2d;
+  background-color: #d09a2d;
+}
+
+.comments {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 300px;
+}
+
+textarea {
+  font-family: lato;
+  width: 100px;
+}
+
+textarea:hover {
+  border: 1px solid #d09a2d;
+}
+
+textarea:focus {
+  border: 1px solid #d09a2d;
+}
+
+.comments:focus{
+    outline: none;
+}
+
+.review-index {
+  border: 1px solid #d09a2d;
+  border-radius: 4px;
+  width: 300px;
+  padding: 10px;
+  font-weight: 300;
+}
+
+.review-index:hover {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.699);
+  transition: .15s ease;
+}
+
+.review-details {
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.review-detail-label {
+  color: #d09a2d;
+}
