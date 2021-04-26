@@ -26,6 +26,15 @@ const Splash = () => {
           </Link>
         </div>
       </div>
+      <div className="footer">
+        <section className='discover-bottom'>
+          <span className="link"><a href="https://github.com/eismatthew/brtnd" target="_blank">GitHub</a></span><br/>
+          <span className="link"><a href="https://www.linkedin.com/in/tim-padgett-9a359286/" target="_blank">Tim Padgett</a></span><br />
+          <span className="link"><a href="https://www.linkedin.com/in/kenneth-schlappkohl-04b9b9136/" target="_blank">Kenneth Schlappkohl</a></span><br />
+          <span className="link"><a href="https://www.linkedin.com/in/matthew-eis/" target="_blank">Matthew Eis</a></span><br />
+          <p>Language: English (US)</p>
+        </section>
+      </div>
     </div>
   );
 };

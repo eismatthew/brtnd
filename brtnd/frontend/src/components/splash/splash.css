@@ -66,3 +66,19 @@
 .splash-buttons button:focus {
   outline: white;
 }
+
+.footer {
+  margin-top: 200px;
+  padding-left: 60px;
+  color:  rgba(255, 255, 255, 0.297);
+}
+
+.link a{
+  color: rgba(255, 255, 255, 0.297);
+  text-decoration: none;
+  transition: .15s ease;
+}
+
+.link a:hover {
+  color: white;
+}
