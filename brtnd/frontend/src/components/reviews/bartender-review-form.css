@@ -73,6 +73,30 @@
   margin-bottom: 30px;
 }
 
+.bartender-name {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  transition: .15s ease;
+}
+
+.bartender-name:focus{
+    outline: none;
+    border: 1px solid #d09a2d;
+}
+
+.bartender-name:hover{
+    outline: none;
+    border: 1px solid #d09a2d;
+}
+
 .sub {
   color: white;
   background-color: transparent;

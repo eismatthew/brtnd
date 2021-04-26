@@ -10,6 +10,7 @@ const BartenderReview = ({}) => {
       <div className="review-container">
         <h1 className="rating-header">Rate your experience</h1>
         <form className="review">
+          <input className="bartender-name" type="text" placeholder="Bartender name" name="bartender-name"/>
           <div className="radio-box">
             <input type="radio" name="radioRating" id="one" value="1"/>
             <label className="rating" for="one">1</label>
