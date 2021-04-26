@@ -8,6 +8,7 @@ import BartenderSessionContainer from "../components/session/bartender_session/b
 import ProfileContainer from "../components/profiles/profile_container";
 import OrderFormContainer from "./order/order_form_container";
 import OpenOrdersContainer from "./order/open_orders_container";
+import BartenderReview from "./reviews/bartenders_review";
 
 import "./App.css";
 
@@ -20,6 +21,11 @@ const App = () => {
           exact
           path="/order-form"
           component={OrderFormContainer}
+        />
+        <ProtectedRoute
+          exact
+          path="/bartender-review-form"
+          component={BartenderReview}
         />
         <ProtectedRoute
           exact
