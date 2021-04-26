@@ -23,6 +23,14 @@
   width: 200px;
 }
 
+.host-profile-flex {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   color: #d09a2d;
   position: fixed;
@@ -114,4 +122,16 @@ button:hover {
 .order-form-box h3 {
   color: white;
   font-weight: 300;
+}
+
+.review-button {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  margin-bottom: 20px;
 }
