@@ -52,6 +52,9 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
           </div>
         </div>
       </div>
+      <Link to="/bartender-review-form">
+        <button className="review-button">Review a bartender</button>
+      </Link>
     </div>
   );
 };
