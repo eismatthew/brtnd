@@ -8,7 +8,7 @@ router.get(
   "/",
   passport.authenticate("bartender", { session: false }),
   (req, res) => {
-    Order.find({})
+    Order.find()
       .sort({ date: -1 })
       .then((orders) => res.json(orders))
       .catch((err) =>
@@ -53,8 +53,6 @@ router.patch(
   "/:id",
   passport.authenticate(["user", "bartender"], { session: false }),
   (req, res) => {
-    console.log(req.params);
-    console.log(req.body);
     Order.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },

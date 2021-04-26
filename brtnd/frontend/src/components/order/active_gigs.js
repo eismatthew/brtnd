@@ -12,6 +12,7 @@ const ActiveGigs = ({ id }) => {
   const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
   const [orderedBy, setOrderedBy] = useState({});
+  const [orderCount, setOrderCount] = useState(0);
 
   useEffect(() => {
     getOrderByBartenderId(id)
@@ -19,10 +20,11 @@ const ActiveGigs = ({ id }) => {
       .then(() =>
         userLookupById(order.orderedBy)
           .then((user) => setOrderedBy(user.data))
-          .catch(() => setOrderedBy({ firstName: "", lastName: "" }))
+          .catch(() => setOrderedBy({}))
       )
-      .then(() => setLoading(false));
-  }, [loading]);
+      .then(() => setLoading(false))
+      .then(() => setOrderCount(1));
+  }, [orderCount]);
 
   useEffect(() => {
     return () => {
@@ -35,11 +37,19 @@ const ActiveGigs = ({ id }) => {
 
   const handleDeleteOrder = () => {
     editOrder(order._id, { takenBy: null });
+    setOrder({});
+    setOrderedBy({});
     setLoading(true);
+    setOrderCount(0);
   };
 
+  if (order === undefined) {
+    setOrder({});
+    setOrderedBy({});
+  }
+
   const render = () => {
-    if (loading && order !== []) {
+    if (loading) {
       return (
         <div>
           <Loader type="TailSpin" color="#d09a2d" height={80} width={80} />
@@ -47,10 +57,14 @@ const ActiveGigs = ({ id }) => {
       );
     }
 
-    if (!editMode && !loading && order !== []) {
+    if (!editMode && !loading) {
       return (
-        <div className="order-display">
-          <OrderBoxItem order={order} orderedBy={orderedBy} />
+        <div>
+          <OrderBoxItem
+            order={order}
+            orderedBy={orderedBy}
+            handleEditMode={handleEditMode}
+          />
           <FontAwesomeIcon
             icon={faEllipsisH}
             className="edit-icon"
@@ -58,11 +72,9 @@ const ActiveGigs = ({ id }) => {
           />
         </div>
       );
-    } else if (order === []) {
-      return <div>No Orders</div>;
     } else {
       return (
-        <div className="order-display">
+        <div>
           <OrderBoxItem order={order} orderedBy={orderedBy} />
           <FontAwesomeIcon
             icon={faTrashAlt}
