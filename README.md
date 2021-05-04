@@ -23,7 +23,7 @@ brtnd is an app that connects hosts to bartenders and bartender to hosts. If you
 ## Features
 
 ### Dual experience
-Users can enter the app as a bartneder or host, each with its own interface and features.<img width="1136" alt="Screen Shot 2021-04-25 at 6 53 50 PM" src="https://user-images.githubusercontent.com/65377724/116018746-94fc4d00-a5f7-11eb-9599-3fda24189edd.png">
+Users can enter the app as a bartender or host, each with its own interface and features.<img width="1136" alt="Screen Shot 2021-04-25 at 6 53 50 PM" src="https://user-images.githubusercontent.com/65377724/116018746-94fc4d00-a5f7-11eb-9599-3fda24189edd.png">
 
 ### Host experience
 Hosts have the ability to place and view their active order. Until their order is complete, hosts are able to update, save, and delete their order through the interface, sending those changes to their bartender.
