@@ -25,8 +25,6 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
     }
   };
 
-  console.log(disabled);
-
   return (
     <div className="bartender-profile-flex">
       <div className="bartender-profile-main">
