@@ -70,7 +70,6 @@ const OrderForm = ({ createOrder }) => {
                     id="quantity"
                     name="headCount"
                     min={1}
-                    max={20}
                     onChange={handleChange}
                   />
                 </div>
