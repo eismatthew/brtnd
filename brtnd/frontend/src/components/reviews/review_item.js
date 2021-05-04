@@ -9,7 +9,7 @@ const ReviewItem = ({ review: { reviewer, rating, comments } }) => {
 
     return () => {};
   }, []);
-  console.log(reviewedBy);
+  // console.log(reviewedBy);
   return (
     <div className="review-item-box">
       <div className="review-display-detail">

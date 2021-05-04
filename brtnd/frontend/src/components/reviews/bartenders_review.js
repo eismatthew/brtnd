@@ -13,7 +13,7 @@ const BartenderReview = ({ createReview }) => {
     rating: "",
     comments: ""
   });
-  console.log(newReview);
+  // console.log(newReview);
   // useEffect(() => {
   //   let config = {
   //     headers: {

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const OrderBoxItem = ({
+  setDisabled,
   order: { headCount, location, tier, notes, price },
   orderedBy: { firstName, lastName },
 }) => {
+  useEffect(() => {
+    if (!firstName || firstName === undefined || !headCount) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+    return () => {};
+  });
   if (!firstName || firstName === undefined || !headCount) {
     return <div>No Orders</div>;
   } else {

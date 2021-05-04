@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 import "./active_orders.css";
 import { userLookupById } from "../../util/session_api_util";
 
-const ActiveGigs = ({ id }) => {
+const ActiveGigs = ({ id, setDisabled }) => {
   const [editMode, setEditMode] = useState(false);
   const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
@@ -64,6 +64,7 @@ const ActiveGigs = ({ id }) => {
             order={order}
             orderedBy={orderedBy}
             handleEditMode={handleEditMode}
+            setDisabled={setDisabled}
           />
           <FontAwesomeIcon
             icon={faEllipsisH}
@@ -75,7 +76,11 @@ const ActiveGigs = ({ id }) => {
     } else {
       return (
         <div>
-          <OrderBoxItem order={order} orderedBy={orderedBy} />
+          <OrderBoxItem
+            order={order}
+            orderedBy={orderedBy}
+            setDisabled={setDisabled}
+          />
           <FontAwesomeIcon
             icon={faTrashAlt}
             className="delete-icon"

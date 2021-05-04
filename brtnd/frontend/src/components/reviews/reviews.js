@@ -4,14 +4,14 @@ import ReviewItem from "./review_item";
 
 const Reviews = ({ id, fetchUserReviews, reviews }) => {
   const [loading, setLoading] = useState(true);
-  console.log(id);
-  console.log(reviews.length);
+  // console.log(id);
+  // console.log(reviews.length);
   useEffect(() => {
     fetchUserReviews(id).then(() => setLoading(false));
     return () => {};
   }, [loading]);
 
-  console.log(reviews[0]);
+  // console.log(reviews[0]);
 
   return loading ? (
     <div>
