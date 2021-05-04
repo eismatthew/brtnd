@@ -14,15 +14,15 @@ const ReviewItem = ({ review: { reviewer, rating, comments } }) => {
     <div className="review-item-box">
       <div className="review-display-detail">
         <span className="detail-label">Reviewed By: </span>
-        {`${reviewedBy.firstName} ${reviewedBy.lastName}`}
+        <span className="white-review">{`${reviewedBy.firstName} ${reviewedBy.lastName}`}</span>
       </div>
       <div className="review-display-detail">
         <span className="detail-label">Rating: </span>
-        {rating}
+        <span className="white-review">{rating}</span>
       </div>
       <div className="review-display-detail">
         <span className="detail-label">Location: </span>
-        {comments}
+        <span className="white-review">{comments}</span>
       </div>
     </div>
   );

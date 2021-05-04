@@ -192,3 +192,7 @@ textarea:focus {
   border: 1px solid #d09a2d;
   background-color: #d09a2d;
 }
+
+.white-review {
+  color: white;
+}
