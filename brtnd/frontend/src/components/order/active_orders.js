@@ -43,6 +43,8 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   const handleDeleteOrder = () => {
     deleteOrder(order._id);
     setOrderCount(0);
+    setLoading(true)
+    setOrder(undefined)
   };
 
   const render = () => {

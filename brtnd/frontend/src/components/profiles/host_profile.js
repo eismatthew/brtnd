@@ -9,11 +9,18 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [orderButtonText, setOrderButtonText] = useState("Start an order");
   const [greeting, setGreeting] = useState("");
   const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [linkTo, setLinkTo] = useState(null);
+
   useEffect(() => {
-    orderCount > 0
-      ? setOrderButtonText("Active Order Below")
-      : setOrderButtonText("Start an order");
-      order !== undefined ? setDisabled(true) : setDisabled(false)
+    if (orderCount > 0) {
+      setOrderButtonText("Active Order Below");
+      setLinkTo(null);
+    } else {
+      setOrderButtonText("Start an order");
+      setLinkTo("/order-form");
+    }
+    order !== undefined ? setDisabled(true) : setDisabled(false);
     return () => {};
   }, [order]);
 
@@ -21,6 +28,16 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
     setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
   }, []);
 
+  const handleOrder = () => {
+    if (disabled) {
+      setErrorMessage("Only one order can be active at a time.");
+      setTimeout(() => {
+        setErrorMessage(null);
+      }, 3000);
+    } else {
+      setLinkTo("/order-form");
+    }
+  };
   return (
     <div className="host-profile-flex">
       <div className="host-profile-main">
@@ -30,8 +47,9 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
               {greeting}, {firstName}
             </h1>
             <div className="start-order">
-              <Link to="/order-form">
-                <button className="profile-button" disabled={disabled}>
+              {errorMessage}
+              <Link to={linkTo}>
+                <button className="profile-button" onClick={handleOrder}>
                   {orderButtonText}
                 </button>
               </Link>
