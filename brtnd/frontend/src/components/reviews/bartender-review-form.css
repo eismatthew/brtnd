@@ -65,6 +65,11 @@
   cursor: pointer;
 }
 
+.radio-box  input[type="radio"]:focus + label {
+  background-color: white;
+  color: #d09a2d;
+}
+
 .rating-header {
   color: white;
   font-size: 28px;
@@ -196,3 +201,33 @@ textarea:focus {
 .white-review {
   color: white;
 }
+
+.review-item-box {
+  border: 1px solid #d09a2d;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  transition: .15s ease;
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+.bartender-dropdown {
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.54);
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.review-item-box:hover {
+  background-color: rgba(0, 0, 0, 0.74);
+    border: 1px solid white;
+}
+
+.bartender-dropdown:focus {
+  outline: none;
+}
+
