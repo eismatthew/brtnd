@@ -21,3 +21,5 @@ export const getBartenderReviewById = (reviewId) =>
 
 export const createBartenderReview = (bartenderReview) =>
   axios.post("/api/bartender-reviews", bartenderReview);
+
+export const getAllBartenders = () => axios.get("/api/user-reviews/bartenders");

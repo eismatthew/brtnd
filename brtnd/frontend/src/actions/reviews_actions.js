@@ -4,6 +4,7 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_NEW_REVIEW = "RECEIVE_NEW_REVIEW";
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
+export const RECEIVE_ALL_BARTENDERS = "RECEIVE_ALL_BARTENDERS";
 
 // export const RECEIVE_USER_REVIEWS = "RECEIVE_USER_REVIEWS";
 // export const RECEIVE_USER_REVIEW = "RECEIVE_USER_REVIEW";
@@ -30,6 +31,11 @@ export const receiveNewReview = (review) => ({
 export const receiveAllReviews = (reviews) => ({
   type: RECEIVE_ALL_REVIEWS,
   reviews,
+});
+
+export const receiveAllBartenders = (bartenders) => ({
+  type: RECEIVE_ALL_BARTENDERS,
+  bartenders
 });
 // export const receiveUserReviews = (reviews) => ({
 //   type: RECEIVE_USER_REVIEWS,
@@ -67,6 +73,14 @@ export const fetchAllReviews = () => (dispatch) =>
     .then((reviews) =>
       dispatch(receiveAllReviews(reviews)).catch((err) => console.log(err))
     );
+
+export const fetchAllBartenders = () => (dispatch) => 
+  reviewsUtil
+    .getAllBartenders()
+    .then((bartenders) => 
+      dispatch(receiveAllBartenders(bartenders)).catch((err) => console.log(err))
+    );
+
 
 export const fetchUserReviews = (userId) => (dispatch) =>
   reviewsUtil
@@ -109,3 +123,4 @@ export const createBartenderReview = (bartenderReview) => (dispatch) =>
     .then((review) =>
       dispatch(receiveNewReview(review)).catch((err) => console.log(err))
     );
+
