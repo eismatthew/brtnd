@@ -1,44 +1,35 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./bartender-review-form.css";
-import { createBartenderReview, createUserReview, getAllBartenders } from "../../util/reviews_api_util";
+import {
+  createUserReview,
+  getAllBartenders,
+} from "../../util/reviews_api_util";
 
 const BartenderReview = ({ id }) => {
-
   const [bartenders, setBartenders] = useState(null);
-
-  // const [reviewedBy, setReviewedby] = useState(null);
-  // const [reviewedFor, setReviewedFor] = useState(null);
   const [newReview, setNewReview] = useState({
     reviewer: id,
     reviewee: "",
     rating: "",
-    comments: ""
+    comments: "",
   });
 
   useEffect(() => {
-    getAllBartenders()
-      .then(res =>
-        setBartenders(res.data))
-  }, [])
-
+    getAllBartenders().then((res) => setBartenders(res.data));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     createUserReview(newReview);
-    // createBartenderReview(newReview);
-    // console.log(newReview);
-    // createReview(newReview);
     setNewReview({
       reviewer: id,
       reviewee: "",
       rating: "",
-      comments: ""
+      comments: "",
     });
   };
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewReview((review) => ({
@@ -49,28 +40,30 @@ const BartenderReview = ({ id }) => {
   let selectBartenders;
 
   if (bartenders === null) {
-    return null
+    return null;
   } else {
-   selectBartenders = (
-     <select name="reviewee" className="bartender-dropdown" onChange={handleChange}>
-       <option value="">Please choose a bartender</option>
-      {bartenders.map((bartender) => <option name="reviewee" value={bartender._id} key={bartender._id}>{bartender.firstName}</option>
-      )}
-    </select>
+    selectBartenders = (
+      <select
+        name="reviewee"
+        className="bartender-dropdown"
+        onChange={handleChange}
+      >
+        <option value="">Please choose a bartender</option>
+        {bartenders.map((bartender) => (
+          <option name="reviewee" value={bartender._id} key={bartender._id}>
+            {bartender.firstName}
+          </option>
+        ))}
+      </select>
+    );
+  }
 
-  ) }
-  console.log(newReview);
-  // console.log(Object.values(bartenders))
   return (
-
     <div className="review-main">
       <div className="review-container">
         <h1 className="rating-header">Rate your experience</h1>
-        <form className="review"
-          onSubmit={handleSubmit}
-     
-        >
-           {selectBartenders} 
+        <form className="review" onSubmit={handleSubmit}>
+          {selectBartenders}
           <div className="radio-box">
             <input
               type="radio"
@@ -79,9 +72,10 @@ const BartenderReview = ({ id }) => {
               value="1"
               checked={newReview.rating === 1}
               onChange={handleChange}
-
             />
-            <label className="rating" htmlFor="one">1</label>
+            <label className="rating" htmlFor="one">
+              1
+            </label>
             <input
               type="radio"
               name="rating"
@@ -90,7 +84,9 @@ const BartenderReview = ({ id }) => {
               checked={newReview.rating === 2}
               onChange={handleChange}
             />
-            <label className="rating" htmlFor="two">2</label>
+            <label className="rating" htmlFor="two">
+              2
+            </label>
             <input
               type="radio"
               name="rating"
@@ -99,7 +95,9 @@ const BartenderReview = ({ id }) => {
               checked={newReview.rating === 3}
               onChange={handleChange}
             />
-            <label className="rating" htmlFor="three">3</label>
+            <label className="rating" htmlFor="three">
+              3
+            </label>
             <input
               type="radio"
               name="rating"
@@ -108,7 +106,9 @@ const BartenderReview = ({ id }) => {
               checked={newReview.rating === 4}
               onChange={handleChange}
             />
-            <label className="rating" htmlFor="four">4</label>
+            <label className="rating" htmlFor="four">
+              4
+            </label>
             <input
               type="radio"
               name="rating"
@@ -117,7 +117,9 @@ const BartenderReview = ({ id }) => {
               checked={newReview.rating === 5}
               onChange={handleChange}
             />
-            <label className="rating" htmlFor="five">5</label>
+            <label className="rating" htmlFor="five">
+              5
+            </label>
           </div>
           <br />
           <textarea
@@ -137,7 +139,7 @@ const BartenderReview = ({ id }) => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default BartenderReview;

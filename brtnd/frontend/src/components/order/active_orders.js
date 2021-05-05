@@ -24,11 +24,6 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   useEffect(() => {
     getOrderByUserId(id)
       .then((order) => setOrder(order.data[0]))
-      .then(() =>
-        bartenderLookupById(order.takenBy)
-          .then((user) => setOrderedBy(user.data))
-          .catch(() => setOrderedBy({}))
-      )
       .then(() => setOrderCount(1))
       .then(() => setLoading(false));
   }, [loading]);
@@ -67,11 +62,25 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
     if (!editMode && !loading && order !== undefined) {
       return (
         <div>
-          <OrderBoxItem
-            order={order}
-            orderedBy={orderedBy}
-            setDisabled={setDisabled}
-          />
+          <div className="order-display">
+            <div className="order-display-detail">
+              <span className="detail-label">Head count: </span>
+              {order.headCount}
+            </div>
+            <div className="order-display-detail">
+              <span className="detail-label">Location: </span> {order.location}
+            </div>
+            <div className="order-display-detail">
+              <span className="detail-label">Drink tier: </span> {order.tier}
+            </div>
+            <div className="order-display-detail">
+              <span className="detail-label">Notes: </span> {order.notes}
+            </div>
+            <div className="order-display-detail">
+              <span className="detail-label">Price: </span> ${order.price}
+            </div>
+          </div>
+
           <FontAwesomeIcon
             icon={faEllipsisH}
             className="edit-icon"

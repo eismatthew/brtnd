@@ -7,12 +7,12 @@ import Loader from "react-loader-spinner";
 import "./active_orders.css";
 import { userLookupById } from "../../util/session_api_util";
 
-const ActiveGigs = ({ id, setDisabled }) => {
+const ActiveGigs = ({ id, setDisabled, setOrderCount, orderCount }) => {
   const [editMode, setEditMode] = useState(false);
   const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
   const [orderedBy, setOrderedBy] = useState({});
-  const [orderCount, setOrderCount] = useState(0);
+  // const [orderCount, setOrderCount] = useState(0);
 
   useEffect(() => {
     getOrderByBartenderId(id)

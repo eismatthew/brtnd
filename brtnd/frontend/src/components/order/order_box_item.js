@@ -6,14 +6,15 @@ const OrderBoxItem = ({
   orderedBy: { firstName, lastName },
 }) => {
   useEffect(() => {
-    if (!firstName || firstName === undefined || !headCount) {
+    if ((!firstName || firstName === undefined) && !headCount) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
     return () => {};
   });
-  if (!firstName || firstName === undefined || !headCount) {
+
+  if ((!firstName || firstName === undefined) && !headCount) {
     return <div>No Orders</div>;
   } else {
     return (

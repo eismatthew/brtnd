@@ -10,12 +10,12 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [greeting, setGreeting] = useState("");
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
-  const [linkTo, setLinkTo] = useState("");
+  const [linkTo, setLinkTo] = useState("/order-form");
 
   useEffect(() => {
     if (orderCount > 0) {
       setOrderButtonText("Active Order Below");
-      setLinkTo(null);
+      setLinkTo("/profile");
     } else {
       setOrderButtonText("Start an order");
       setLinkTo("/order-form");

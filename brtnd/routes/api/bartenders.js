@@ -9,6 +9,19 @@ const passport = require("passport");
 const validateSignupInput = require("../../validation/signup");
 const validateLoginInput = require("../../validation/login");
 
+router.get(
+  "/",
+
+  passport.authenticate("user", { session: false }),
+
+  (req, res) => {
+    Bartender.find()
+      .then((bartenders) => res.json(bartenders))
+      .catch((err) =>
+        res.status(404).json({ bartenderError: "No bartenders found." })
+      );
+  }
+);
 
 router.get(
   "/:id",
@@ -23,8 +36,6 @@ router.get(
       .catch((err) => res.status(404).json({ noUsersFound: "No user found." }));
   }
 );
-
-
 
 router.get(
   "/current/bartender",

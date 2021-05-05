@@ -29,13 +29,13 @@ router.get(
   }
 );
 
-router.get("/:id", (req, res) => {
-  Order.findById(req.params.id)
-    .then((order) => res.json(order))
-    .catch((err) =>
-      res.status(404).json({ noOrdersFound: "No order found with that ID" })
-    );
-});
+// router.get("/:id", (req, res) => {
+//   Order.findById(req.params.id)
+//     .then((order) => res.json(order))
+//     .catch((err) =>
+//       res.status(404).json({ noOrdersFound: "No order found with that ID" })
+//     );
+// });
 
 router.delete(
   "/:id",

@@ -12,11 +12,6 @@ const UserReviewSchema = new Schema({
     ref: "bartenders",
     required: true,
   },
-  order: {
-    type: Schema.Types.ObjectId,
-    ref: "orders",
-    required: true,
-  },
   rating: {
     type: Number,
     possibleValues: [1, 2, 3, 4, 5],

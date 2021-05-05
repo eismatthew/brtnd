@@ -8,11 +8,15 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [greeting, setGreeting] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [linkTo, setLinkTo] = useState("");
-
+  const [linkTo, setLinkTo] = useState("/open-orders");
+  const [orderCount, setOrderCount] = useState(0);
   useEffect(() => {
     setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
   }, []);
+
+  useEffect(() => {
+    disabled ? setLinkTo("/profile") : setLinkTo("/open-orders")
+  }, [orderCount]);
 
   const handleOrder = () => {
     if (disabled) {
@@ -24,7 +28,8 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
       setLinkTo("/open-orders");
     }
   };
-
+  console.log(linkTo);
+  console.log(disabled);
   return (
     <div className="bartender-profile-flex">
       <div className="bartender-profile-main">
@@ -46,7 +51,7 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
             <h3>Your orders</h3>
             <div className="bartender-order-box">
               <p>Order index item(s) here</p>
-              <ActiveGigs id={id} setDisabled={setDisabled} />
+              <ActiveGigs id={id} setDisabled={setDisabled} setOrderCount={setOrderCount} orderCount={orderCount} />
             </div>
           </div>
         </div>

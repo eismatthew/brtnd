@@ -9,7 +9,7 @@ export const getUserReviewById = (reviewId) =>
   axios.get(`/api/user-reviews/${reviewId}`);
 
 export const createUserReview = (userReview) =>
-  axios.post("api/user-reviews", userReview);
+  axios.post("api/user-reviews/", userReview);
 
 export const getAllBartenderReviews = () => axios.get("/api/bartender-reviews");
 

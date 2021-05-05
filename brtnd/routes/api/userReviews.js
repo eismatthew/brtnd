@@ -45,25 +45,14 @@ router.post(
   "/",
   passport.authenticate("user", { session: false }),
   (req, res) => {
-    UserReview.find({ order: req.body.order }, function (err, results) {
-      if (err) {
-        console.log(err);
-      }
-      if (results.length === 0) {
-        const newUserReview = new UserReview({
-          reviewer: req.body.reviewer,
-          reviewee: req.body.reviewee,
-          order: req.body.order,
-          rating: req.body.rating,
-          comments: req.body.comments,
-        });
-        newUserReview.save().then((userReview) => res.json(userReview));
-      } else {
-        return res
-          .status(400)
-          .json({ order: "A review already exists for this event" });
-      }
+    const newUserReview = new UserReview({
+      reviewer: req.body.reviewer,
+      reviewee: req.body.reviewee,
+      order: req.body.order,
+      rating: req.body.rating,
+      comments: req.body.comments,
     });
+    newUserReview.save().then((userReview) => res.json(userReview));
   }
 );
 
