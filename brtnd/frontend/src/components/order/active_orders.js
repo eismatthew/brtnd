@@ -12,14 +12,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner";
 import "./active_orders.css";
+import OrderBoxItem from "./order_box_item";
+import { bartenderLookupById } from "../../util/session_api_util";
 
 const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   const [editMode, setEditMode] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [orderedBy, setOrderedBy] = useState({});
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     getOrderByUserId(id)
       .then((order) => setOrder(order.data[0]))
+      .then(() =>
+        bartenderLookupById(order.takenBy)
+          .then((user) => setOrderedBy(user.data))
+          .catch(() => setOrderedBy({}))
+      )
       .then(() => setOrderCount(1))
       .then(() => setLoading(false));
   }, [loading]);
@@ -43,8 +52,8 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   const handleDeleteOrder = () => {
     deleteOrder(order._id);
     setOrderCount(0);
-    setLoading(true)
-    setOrder(undefined)
+    setLoading(true);
+    setOrder(undefined);
   };
 
   const render = () => {
@@ -55,27 +64,14 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
         </div>
       );
     }
-
     if (!editMode && !loading && order !== undefined) {
       return (
-        <div className="order-display">
-          <div className="order-display-detail">
-            <span className="detail-label">Head count: </span>
-            {order.headCount}
-          </div>
-          <div className="order-display-detail">
-            <span className="detail-label">Location: </span> {order.location}
-          </div>
-          <div className="order-display-detail">
-            <span className="detail-label">Drink tier: </span> {order.tier}
-          </div>
-          <div className="order-display-detail">
-            <span className="detail-label">Notes: </span> {order.notes}
-          </div>
-          <div className="order-display-detail">
-            <span className="detail-label">Price: </span> ${order.price}
-          </div>
-          <div className="order-display-detail">{order.takenBy}</div>
+        <div>
+          <OrderBoxItem
+            order={order}
+            orderedBy={orderedBy}
+            setDisabled={setDisabled}
+          />
           <FontAwesomeIcon
             icon={faEllipsisH}
             className="edit-icon"

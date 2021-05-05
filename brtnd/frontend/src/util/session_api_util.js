@@ -20,3 +20,6 @@ export const bartenderLogin = (userData) =>
   axios.post("/api/bartenders/login", userData);
 
 export const userLookupById = (userId) => axios.get(`api/users/${userId}`);
+
+export const bartenderLookupById = (bartenderId) =>
+  axios.get(`api/bartenders/${bartenderId}`);
