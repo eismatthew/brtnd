@@ -15,7 +15,7 @@ const ProfilePage = ({ id, logout }) => {
     };
     localStorage.bartender !== "false"
       ? axios
-          .get("/api/bartenders/current", config)
+          .get("/api/bartenders/current/bartender", config)
           .then((res) => setCurrentUser(res.data))
       : axios
           .get("/api/users/current/user", config)

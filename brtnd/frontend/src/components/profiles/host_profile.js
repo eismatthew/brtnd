@@ -10,7 +10,7 @@ const HostProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [greeting, setGreeting] = useState("");
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
-  const [linkTo, setLinkTo] = useState(null);
+  const [linkTo, setLinkTo] = useState("");
 
   useEffect(() => {
     if (orderCount > 0) {

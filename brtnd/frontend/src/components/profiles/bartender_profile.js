@@ -8,7 +8,7 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
   const [greeting, setGreeting] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [linkTo, setLinkTo] = useState(null);
+  const [linkTo, setLinkTo] = useState("");
 
   useEffect(() => {
     setGreeting(greetings[Math.floor(Math.random() * greetings.length)]);
