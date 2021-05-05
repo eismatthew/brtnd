@@ -64,6 +64,17 @@ const BartenderReview = ({ id }) => {
         <h1 className="rating-header">Rate your experience</h1>
         <form className="review" onSubmit={handleSubmit}>
           {selectBartenders}
+          <br />
+          <textarea
+            className="comments"
+            placeholder="Comments"
+            rows="4"
+            cols="50"
+            name="comments"
+            value={newReview.comments}
+            onChange={handleChange}
+          ></textarea>
+          <br />
           <div className="radio-box">
             <input
               type="radio"
@@ -121,17 +132,6 @@ const BartenderReview = ({ id }) => {
               5
             </label>
           </div>
-          <br />
-          <textarea
-            className="comments"
-            placeholder="Comments"
-            rows="4"
-            cols="50"
-            name="comments"
-            value={newReview.comments}
-            onChange={handleChange}
-          ></textarea>
-          <br />
           <input className="sub" type="submit" value="Submit" />
         </form>
         <Link to="/profile">

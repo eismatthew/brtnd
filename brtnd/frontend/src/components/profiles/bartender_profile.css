@@ -152,7 +152,7 @@ color: white;
   margin-bottom: 20px;
   position: fixed;
   top: 90px;
-  right: 500px;
+  left: 500px;
 }
 
 .review-button:hover {
