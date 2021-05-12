@@ -40,6 +40,7 @@ const OrderForm = ({ createOrder }) => {
       orderedBy: orderedBy,
       takenBy: "",
     });
+    document.location = "/profile";
   };
 
   const handleChange = (e) => {
