@@ -8,7 +8,6 @@ import "./active_orders.css";
 import { userLookupById } from "../../util/session_api_util";
 
 const ActiveGigs = ({ id, setDisabled, setOrderCount, orderCount }) => {
-  const [editMode, setEditMode] = useState(false);
   const [order, setOrder] = useState({});
   const [loading, setLoading] = useState(true);
   const [orderedBy, setOrderedBy] = useState({});
@@ -32,9 +31,6 @@ const ActiveGigs = ({ id, setDisabled, setOrderCount, orderCount }) => {
     };
   }, []);
 
-  const handleEditMode = () =>
-    !editMode ? setEditMode(true) : setEditMode(false);
-
   const handleDeleteOrder = () => {
     editOrder(order._id, { takenBy: null });
     setOrder({});
@@ -57,43 +53,40 @@ const ActiveGigs = ({ id, setDisabled, setOrderCount, orderCount }) => {
       );
     }
 
-    if (!editMode && !loading) {
+    if (!loading) {
       return (
         <div>
           <OrderBoxItem
             order={order}
             orderedBy={orderedBy}
-            handleEditMode={handleEditMode}
+            handleDeleteOrder={handleDeleteOrder}
             setDisabled={setDisabled}
-          />
-          <FontAwesomeIcon
-            icon={faEllipsisH}
-            className="edit-icon"
-            onClick={handleEditMode}
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <OrderBoxItem
-            order={order}
-            orderedBy={orderedBy}
-            setDisabled={setDisabled}
-          />
-          <FontAwesomeIcon
-            icon={faTrashAlt}
-            className="delete-icon"
-            onClick={handleDeleteOrder}
-          />
-          <FontAwesomeIcon
-            icon={faEllipsisH}
-            className="edit-icon"
-            onClick={handleEditMode}
           />
         </div>
       );
     }
+    // else {
+    //   return (
+    //     <div>
+    //       <OrderBoxItem
+    //         order={order}
+    //         orderedBy={orderedBy}
+    //         handleDeleteOrder={handleDeleteOrder}
+    //         setDisabled={setDisabled}
+    //       />
+    //       <FontAwesomeIcon
+    //         icon={faTrashAlt}
+    //         className="delete-icon"
+    //         onClick={handleDeleteOrder}
+    //       />
+    //       <FontAwesomeIcon
+    //         icon={faEllipsisH}
+    //         className="edit-icon"
+    //         onClick={handleEditMode}
+    //       />
+    //     </div>
+    //   );
+    // }
   };
 
   return <div>{render()}</div>;
