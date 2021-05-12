@@ -13,7 +13,7 @@ const OrderItem = ({
   const handleTakeOrder = () => {
     editOrder(_id, { takenBy: id });
     setOrderCount(1);
-    document.location = "/profile";
+    document.location = "/#/profile";
   };
 
   return (
