@@ -18,20 +18,8 @@ import { bartenderLookupById } from "../../util/session_api_util";
 const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
   const [editMode, setEditMode] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [multiplier, setMultiplier] = useState(0);
-  const [orderPrice, setOrderPrice] = useState("");
   const [orderedBy, setOrderedBy] = useState({});
   const [disabled, setDisabled] = useState(false);
-
-//   .then(() => {
-//     if (order.tier === "Tier two") {
-//       setMultiplier(500);
-//       setOrderPrice(order.headCount * 30 + multiplier);
-//     } else if (order.tier === "Tier three") {
-//       setMultiplier(1000);
-//       setOrderPrice(order.headCount * 30 + multiplier);
-//     }
-// })
 
   useEffect(() => {
     getOrderByUserId(id)
@@ -39,9 +27,6 @@ const ActiveOrders = ({ id, setOrderCount, order, setOrder }) => {
       .then(() => setOrderCount(1))
       .then(() => setLoading(false));
   }, [loading]);
-
-  console.log(multiplier, orderPrice);
-  // let orderPrice;
 
   const handleEditOrder = (e) => {
     const { name, value } = e.target;
