@@ -134,6 +134,16 @@ const OrderForm = ({ createOrder }) => {
           </Link>
         </div>
       </div>
+      <div className="order-tips">
+        <h1>Ordering Information</h1>
+        <p>Headcount refers to the number of people drinking at your event. The price floor of your order is $30/head.</p>
+        <p>Teir package referes to the quality of drinks at your event. Tier one carries no additional price and will get you drinks similar to the calibur of Corona Beer.
+          Teir two comes at a $500 premium, getting you bottles similar to Black Label, Smirnoff, St. George, even Burning Chair.
+          Teir three is for premium events, adding a $1000 premium, earning you top-shelf bottles with the highest level of bartending on demand. Think the Pappy Van Winkle in the best old fashioned you've ever had.
+        </p>
+        <p>Be as specific as possible with your location.</p>
+        <p>Finally, utilize the notes section to communicate any specific requests, including scheduling an event in advance.</p>
+      </div>
     </div>
   );
 };

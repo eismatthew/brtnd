@@ -231,3 +231,31 @@ textarea {
   background-color: #d09a2d;
 }
 
+.order-tips {
+  position: fixed;
+  top: 90px;
+  left: 600px;
+  border: 1px solid #d09a2d;
+  width: 400px;
+  padding: 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.699);
+      transition: .15s ease;
+}
+
+.order-tips:hover {
+  background: rgba(0, 0, 0, 0.799)
+}
+.order-tips h1 {
+  color: #d09a2d;
+  font-size: 20px;
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+}
+
+.order-tips p {
+  font-weight: 300;
+  margin-left: 12px;
+}
