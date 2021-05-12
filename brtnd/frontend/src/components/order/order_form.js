@@ -125,7 +125,9 @@ const OrderForm = ({ createOrder }) => {
                 value={newOrder.notes}
                 onChange={handleChange}
               />
+              <a href="/">
               <input className="sub" type="submit" value="Place Order" />
+              </a>
             </form>
           </div>
           <Link to="/profile">

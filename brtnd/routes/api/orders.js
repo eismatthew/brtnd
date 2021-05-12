@@ -53,6 +53,14 @@ router.patch(
   "/:id",
   passport.authenticate(["user", "bartender"], { session: false }),
   (req, res) => {
+    if (req.body.tier === "Tier three") {
+      req.body.price = 1000 + req.body.headCount * 30;
+    } else if (req.body.tier === "Tier two") {
+      req.body.price = 500 + req.body.headCount * 30;
+    } else if (req.body.tier === "Tier one") {
+      req.body.price = req.body.headCount * 30;
+    }
+    console.log(req.body.headCount);
     Order.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
@@ -73,17 +81,23 @@ router.post(
   passport.authenticate("user", { session: false }),
   (req, res) => {
     let theOrder;
+    let multiplier = 0;
 
     Order.find({ orderedBy: req.body.orderedBy })
       .then((order) => (theOrder = order))
       .then(() => {
         if (theOrder.length === 0) {
+          if (req.body.tier === "Tier three") {
+            multiplier = 1000 + req.body.headCount * 30;
+          } else if (req.body.tier === "Tier two") {
+            multiplier = 500 + req.body.headCount * 30;
+          }
           const newOrder = new Order({
             headCount: req.body.headCount,
             tier: req.body.tier,
             location: req.body.location,
             notes: req.body.notes,
-            price: req.body.price,
+            price: multiplier,
             createdAt: req.body.date,
             orderedBy: req.body.orderedBy,
           });

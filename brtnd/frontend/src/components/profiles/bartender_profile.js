@@ -28,8 +28,8 @@ const BartenderProfile = ({ id, currentUser: { firstName }, greetings }) => {
       setLinkTo("/open-orders");
     }
   };
-  console.log(linkTo);
-  console.log(disabled);
+  // console.log(linkTo);
+  // console.log(disabled);
   return (
     <div className="bartender-profile-flex">
       <div className="bartender-profile-main">
